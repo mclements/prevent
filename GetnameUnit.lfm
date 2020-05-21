@@ -1,0 +1,58 @@
+object Getnameform: TGetnameform
+  Left = 285
+  Top = 209
+  BorderIcons = [biMinimize, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'Intervention name'
+  ClientHeight = 141
+  ClientWidth = 380
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  PixelsPerInch = 96
+  object GetnameLabel: TLabel
+    Left = 56
+    Top = 24
+    Width = 188
+    Height = 13
+    Caption = 'Type a unique name for the intervention'
+  end
+  object NameEdit: TEdit
+    Left = 56
+    Top = 48
+    Width = 265
+    Height = 21
+    TabOrder = 0
+  end
+  object BotPanel: TPanel
+    Left = 0
+    Top = 100
+    Width = 380
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object OKBut: TButton
+      Left = 285
+      Top = 6
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&OK'
+      TabOrder = 0
+      OnClick = OKButClick
+    end
+    object CancelBut: TButton
+      Left = 192
+      Top = 6
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = CancelButClick
+    end
+  end
+end

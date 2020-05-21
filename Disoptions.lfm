@@ -1,0 +1,174 @@
+object DisopForm: TDisopForm
+  Left = 284
+  Top = 169
+  Width = 377
+  Height = 328
+  Caption = 'DisopForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 260
+    Width = 369
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object OKBut: TButton
+      Left = 278
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = OKButClick
+    end
+    object EscBut: TButton
+      Left = 174
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = EscButClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 369
+    Height = 260
+    Align = alClient
+    TabOrder = 1
+    object CfatGroup: TGroupBox
+      Left = 6
+      Top = 174
+      Width = 170
+      Height = 73
+      Caption = 'Case fatality'
+      TabOrder = 0
+      object CfatCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = CfatCheckClick
+      end
+      object Cfatboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object InciGroup: TGroupBox
+      Left = 6
+      Top = 6
+      Width = 170
+      Height = 73
+      Caption = 'Incidence'
+      TabOrder = 1
+      object InciCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = InciCheckClick
+      end
+      object Inciboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object RemiGroup: TGroupBox
+      Left = 6
+      Top = 94
+      Width = 170
+      Height = 73
+      Caption = 'Remission'
+      TabOrder = 2
+      object RemiCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = RemiCheckClick
+      end
+      object Remiboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object DisabGroup: TGroupBox
+      Left = 190
+      Top = 6
+      Width = 170
+      Height = 73
+      Caption = 'Disability'
+      TabOrder = 3
+      object Dalycheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = InciCheckClick
+      end
+      object Dalyboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object CostGroup: TGroupBox
+      Left = 189
+      Top = 94
+      Width = 170
+      Height = 73
+      Caption = 'Costs'
+      TabOrder = 4
+      object CostCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = InciCheckClick
+      end
+      object Costboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+  end
+end

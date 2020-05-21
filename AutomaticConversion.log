@@ -1,0 +1,657 @@
+Prevent.lpi Note: Added defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL in custom options
+ Progress: Found all unit files
+Prevent.dpr Note: Replaced unit "winTypes" with "LCLIntf, LCLType, LMessages" in uses section.
+Prevent.dpr Note: Removed unit "winProcs" from uses section.
+ : 
+ : *** Converting unit files belonging to project/package ***
+PREVMAIN.PAS(129,11) Note: Fixed character case of unit "gescale" to "GESCALE".
+PREVMAIN.PAS(129,20) Note: Fixed character case of unit "winglob" to "WINGLOB".
+PREVMAIN.PAS(129,28) Note: Fixed character case of unit "aboutun" to "ABOUTUN".
+PREVMAIN.PAS(129,36) Note: Fixed character case of unit "dataset" to "DATASET".
+PREVMAIN.PAS(129,44) Note: Fixed character case of unit "runop" to "RUNOP".
+PREVMAIN.PAS(129,51) Note: Fixed character case of unit "outop" to "OUTOP".
+PREVMAIN.PAS(129,58) Note: Fixed character case of unit "runspec" to "RUNSPEC".
+PREVMAIN.PAS(130,6) Note: Fixed character case of unit "tabeluit" to "Tabeluit".
+PREVMAIN.PAS(130,16) Note: Fixed character case of unit "grafuit1" to "Grafuit1".
+PREVMAIN.PAS(131,6) Note: Fixed character case of unit "initial" to "INITIAL".
+PREVMAIN.PAS(131,14) Note: Fixed character case of unit "disunit" to "DisUnit".
+PREVMAIN.PAS(131,22) Note: Fixed character case of unit "startun" to "STARTUN".
+PREVMAIN.PAS(131,40) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+PREVMAIN.PAS(131,48) Note: Fixed character case of unit "calcunit" to "CalcUnit".
+PREVMAIN.PAS(132,11) Note: Fixed character case of unit "sensunit" to "Sensunit".
+PREVMAIN.PAS Note: Removed unit "GIFImage" from uses section.
+PREVMAIN.PAS Note: Removed unit "TabNotBk" from uses section.
+PREVMAIN.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+PREVMAIN.PAS Note: Removed unit "WinTypes" from uses section.
+PREVMAIN.PAS(1,6) Note: Fixed unit name from Prevmain to PREVMAIN.
+ABOUTUN.PAS Note: Removed unit "GIFImage" from uses section.
+ABOUTUN.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+ABOUTUN.PAS Note: Removed unit "WinTypes" from uses section.
+ABOUTUN.PAS(1,6) Note: Fixed unit name from Aboutun to ABOUTUN.
+DATASET.PAS(67,18) Note: Fixed character case of unit "gescale" to "GESCALE".
+DATASET.PAS(67,26) Note: Fixed character case of unit "winglob" to "WINGLOB".
+DATASET.PAS(67,46) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+DATASET.PAS(67,56) Note: Fixed character case of unit "initial" to "INITIAL".
+DATASET.PAS(67,64) Note: Fixed character case of unit "disunit" to "DisUnit".
+DATASET.PAS(67,72) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+DATASET.PAS(68,3) Note: Fixed character case of unit "Runop" to "RUNOP".
+DATASET.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+DATASET.PAS Note: Removed unit "WinTypes" from uses section.
+DATASET.PAS(1,6) Note: Fixed unit name from Dataset to DATASET.
+WINGLOB.PAS(5,6) Note: Fixed character case of unit "initial" to "INITIAL".
+WINGLOB.PAS(1,6) Note: Fixed unit name from winglob to WINGLOB.
+RUNOP.PAS(52,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+RUNOP.PAS(52,14) Note: Fixed character case of unit "initial" to "INITIAL".
+RUNOP.PAS(52,22) Note: Fixed character case of unit "disunit" to "DisUnit".
+RUNOP.PAS(52,30) Note: Fixed character case of unit "winglob" to "WINGLOB".
+RUNOP.PAS(52,38) Note: Fixed character case of unit "runspec" to "RUNSPEC".
+RUNOP.PAS(53,14) Note: Fixed character case of unit "popoptions" to "Popoptions".
+RUNOP.PAS(53,25) Note: Fixed character case of unit "predefintunit" to "PredefintUnit".
+RUNOP.PAS(53,40) Note: Fixed character case of unit "Dataset" to "DATASET".
+RUNOP.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+RUNOP.PAS Note: Removed unit "WinTypes" from uses section.
+RUNOP.PAS(1,6) Note: Fixed unit name from Runop to RUNOP.
+OUTOP.PAS(7,38) Note: Fixed character case of unit "initial" to "INITIAL".
+OUTOP.PAS(66,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+OUTOP.PAS(66,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+OUTOP.PAS(66,22) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+OUTOP.PAS(66,31) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+OUTOP.PAS(66,39) Note: Fixed character case of unit "tabeluit" to "Tabeluit".
+OUTOP.PAS(66,48) Note: Fixed character case of unit "disunit" to "DisUnit".
+OUTOP.PAS(66,56) Note: Fixed character case of unit "outvarunit" to "OutvarUnit".
+OUTOP.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+OUTOP.PAS Note: Removed unit "WinTypes" from uses section.
+OUTOP.PAS(1,6) Note: Fixed unit name from Outop to OUTOP.
+RUNSPEC.PAS(41,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+RUNSPEC.PAS(41,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+RUNSPEC.PAS(41,23) Note: Fixed character case of unit "initial" to "INITIAL".
+RUNSPEC.PAS(41,32) Note: Fixed character case of unit "disunit" to "DisUnit".
+RUNSPEC.PAS(41,41) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+RUNSPEC.PAS(41,51) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+RUNSPEC.PAS Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+RUNSPEC.PAS Note: Removed unit "WinTypes" from uses section.
+RUNSPEC.PAS(1,6) Note: Fixed unit name from Runspec to RUNSPEC.
+STARTUN.PAS(7,3) Note: Fixed character case of unit "winglob" to "WINGLOB".
+STARTUN.PAS(1,6) Note: Fixed unit name from Startun to STARTUN.
+kies.pas(7,28) Note: Fixed character case of unit "disunit" to "DisUnit".
+kies.pas(39,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+kies.pas(39,14) Note: Fixed character case of unit "initial" to "INITIAL".
+kies.pas Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+kies.pas Note: Removed unit "WinTypes" from uses section.
+INITIAL.PAS(144,6) Note: Fixed character case of unit "winglob" to "WINGLOB".
+INITIAL.PAS(144,36) Note: Fixed character case of unit "grafuit1" to "Grafuit1".
+INITIAL.PAS(144,54) Note: Fixed character case of unit "tabeluit" to "Tabeluit".
+INITIAL.PAS(144,63) Note: Fixed character case of unit "outop" to "OUTOP".
+INITIAL.PAS(144,69) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+INITIAL.PAS(1,6) Note: Fixed unit name from initial to INITIAL.
+GESCALE.PAS(13,6) Note: Fixed character case of unit "winglob" to "WINGLOB".
+GESCALE.PAS(1,6) Note: Fixed unit name from geScale to GESCALE.
+dynchart.pas(8,50) Note: Fixed character case of unit "initial" to "INITIAL".
+dynchart.pas(46,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+dynchart.pas(46,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+dynchart.pas(46,22) Note: Fixed character case of unit "outop" to "OUTOP".
+dynchart.pas Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+dynchart.pas Note: Removed unit "WinTypes" from uses section.
+dynpyra.pas(8,3) Note: Fixed character case of unit "initial" to "INITIAL".
+dynpyra.pas(38,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+dynpyra.pas(38,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+dynpyra.pas(38,22) Note: Fixed character case of unit "outop" to "OUTOP".
+dynpyra.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Fkies.pas(42,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+Fkies.pas(42,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Fkies.pas(42,22) Note: Fixed character case of unit "outop" to "OUTOP".
+Fkies.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Grafuit1.pas(8,50) Note: Fixed character case of unit "initial" to "INITIAL".
+Grafuit1.pas(39,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+Grafuit1.pas(39,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Grafuit1.pas(39,23) Note: Fixed character case of unit "Outop" to "OUTOP".
+Grafuit1.pas Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+Grafuit1.pas Note: Removed unit "WinTypes" from uses section.
+Grafuit1.pas(1,6) Note: Fixed unit name from grafuit1 to Grafuit1.
+Tabeluit.pas(7,45) Note: Fixed character case of unit "initial" to "INITIAL".
+Tabeluit.pas(39,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+Tabeluit.pas(39,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Tabeluit.pas(39,23) Note: Fixed character case of unit "Prevmain" to "PREVMAIN".
+Tabeluit.pas Note: Replaced unit "WinProcs" with "LCLIntf, LCLType, LMessages" in uses section.
+Tabeluit.pas Note: Removed unit "WinTypes" from uses section.
+dynlijns.pas(8,3) Note: Fixed character case of unit "initial" to "INITIAL".
+dynlijns.pas(34,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+dynlijns.pas(34,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+dynlijns.pas(34,22) Note: Fixed character case of unit "outop" to "OUTOP".
+dynlijns.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+dynbars.pas(8,3) Note: Fixed character case of unit "initial" to "INITIAL".
+dynbars.pas(34,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+dynbars.pas(34,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+dynbars.pas(34,22) Note: Fixed character case of unit "outop" to "OUTOP".
+dynbars.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+DisUnit.pas(5,28) Note: Fixed character case of unit "initial" to "INITIAL".
+DisUnit.pas(308,15) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+DisUnit.pas(308,24) Note: Fixed character case of unit "dataset" to "DATASET".
+DisUnit.pas(308,32) Note: Fixed character case of unit "disoptions" to "Disoptions".
+DisUnit.pas(308,59) Note: Fixed character case of unit "calcunit" to "CalcUnit".
+rfoptions.pas(7,22) Note: Fixed character case of unit "disunit" to "DisUnit".
+rfoptions.pas(33,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+rfoptions.pas(33,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+rfoptions.pas(33,22) Note: Fixed character case of unit "initial" to "INITIAL".
+rfoptions.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Disoptions.pas(7,3) Note: Fixed character case of unit "disunit" to "DisUnit".
+Disoptions.pas(53,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+Disoptions.pas(53,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Disoptions.pas(53,22) Note: Fixed character case of unit "initial" to "INITIAL".
+Disoptions.pas(53,46) Note: Fixed character case of unit "Dataset" to "DATASET".
+Disoptions.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+BEVOLUN.PAS(6,38) Note: Fixed character case of unit "initial" to "INITIAL".
+BEVOLUN.PAS(55,3) Note: Fixed character case of unit "winglob" to "WINGLOB".
+BEVOLUN.PAS(56,3) Note: Fixed character case of unit "startun" to "STARTUN".
+BEVOLUN.PAS(56,11) Note: Fixed character case of unit "dataset" to "DATASET".
+BEVOLUN.PAS(56,20) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+BEVOLUN.PAS(56,29) Note: Fixed character case of unit "disunit" to "DisUnit".
+BEVOLUN.PAS(56,45) Note: Fixed character case of unit "popoptions" to "Popoptions".
+BEVOLUN.PAS(2,6) Note: Fixed unit name from bevolun to BEVOLUN.
+Popoptions.pas(46,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+Popoptions.pas(46,14) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Popoptions.pas(46,22) Note: Fixed character case of unit "initial" to "INITIAL".
+Popoptions.pas(46,30) Note: Fixed character case of unit "predefintunit" to "PredefintUnit".
+Popoptions.pas(46,45) Note: Fixed character case of unit "Dataset" to "DATASET".
+Popoptions.pas(46,62) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+Popoptions.pas(46,71) Note: Fixed character case of unit "Prevmain" to "PREVMAIN".
+Popoptions.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+memomes.pas(33,6) Note: Fixed character case of unit "gescale" to "GESCALE".
+memomes.pas(33,22) Note: Fixed character case of unit "dataset" to "DATASET".
+memomes.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+datmod1.pas Note: Replaced unit "DBTables" with "sqldb" in uses section.
+datmod1.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Sensunit.pas(7,48) Note: Fixed character case of unit "initial" to "INITIAL".
+Sensunit.pas(150,11) Note: Fixed character case of unit "winglob" to "WINGLOB".
+Sensunit.pas(150,29) Note: Fixed character case of unit "runop" to "RUNOP".
+Sensunit.pas(150,45) Note: Fixed character case of unit "permusens" to "Permusens".
+Sensunit.pas(150,55) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+Sensunit.pas(150,64) Note: Fixed character case of unit "disunit" to "DisUnit".
+Sensunit.pas(151,12) Note: Fixed character case of unit "Aboutun" to "ABOUTUN".
+Sensunit.pas(151,28) Note: Fixed character case of unit "Outop" to "OUTOP".
+Sensunit.pas(151,35) Note: Fixed character case of unit "Dataset" to "DATASET".
+Sensunit.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+parasel.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Permusens.pas(35,6) Note: Fixed character case of unit "sensunit" to "Sensunit".
+Permusens.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+GetnameUnit.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+PredefintUnit.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+trendintvunit.pas(4,14) Note: Fixed character case of unit "initial" to "INITIAL".
+trendintvunit.pas(135,3) Note: Fixed character case of unit "dataset" to "DATASET".
+OutvarUnit.pas(4,32) Note: Fixed character case of unit "initial" to "INITIAL".
+OutvarUnit.pas(241,44) Note: Fixed character case of unit "prevmain" to "PREVMAIN".
+OutvarUnit.pas(241,58) Note: Fixed character case of unit "bevolun" to "BEVOLUN".
+OutvarUnit.pas(241,66) Note: Fixed character case of unit "disunit" to "DisUnit".
+OutvarUnit.pas(241,74) Note: Fixed character case of unit "outop" to "OUTOP".
+OutvarUnit.pas(241,89) Note: Fixed character case of unit "grafuit1" to "Grafuit1".
+OutvarUnit.pas(242,22) Note: Fixed character case of unit "tabeluit" to "Tabeluit".
+CalcUnit.pas(4,6) Note: Fixed character case of unit "disunit" to "DisUnit".
+HTMLHelpViewer.pas Note: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+ : 
+ : *** Fixing used units and Repairing form files ***
+PREVMAIN.PAS Note: Removed property "DesignSize".
+PREVMAIN.PAS Note: Removed property "DesignSize".
+PREVMAIN.PAS Note: Removed property "TextHeight".
+PREVMAIN.PAS Note: Removed property "OldCreateOrder".
+PREVMAIN.PAS Note: Changed Top coord of TPageControl from "23" to "21" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TPageControl from "1" to "0" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TImage from "146" to "144" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TImage from "91" to "89" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TLabel from "1" to "0" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TLabel from "1" to "0" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TButton from "194" to "192" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TBitBtn from "8" to "6" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TBitBtn from "21" to "19" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TButton from "290" to "288" inside TPanel.
+PREVMAIN.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+PREVMAIN.PAS Note: Changed Left coord of TButton from "388" to "386" inside TPanel.
+ABOUTUN.PAS Note: Removed property "IsControl".
+ABOUTUN.PAS Note: Removed property "IsControl".
+ABOUTUN.PAS Note: Removed property "IsControl".
+ABOUTUN.PAS Note: Removed property "TextHeight".
+ABOUTUN.PAS Note: Removed property "OldCreateOrder".
+ABOUTUN.PAS Note: Changed Top coord of TLabel from "136" to "134" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TLabel from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TImage from "64" to "62" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TImage from "196" to "194" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TImage from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TImage from "88" to "86" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TLabel from "120" to "118" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TLabel from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TLabel from "104" to "102" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TLabel from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TLabel from "72" to "70" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TLabel from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TLabel from "40" to "38" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TLabel from "88" to "86" inside TPanel.
+ABOUTUN.PAS Note: Changed Top coord of TImage from "8" to "6" inside TPanel.
+ABOUTUN.PAS Note: Changed Left coord of TImage from "16" to "14" inside TPanel.
+DATASET.PAS Note: Removed property "DesignSize".
+DATASET.PAS Note: Removed property "TextHeight".
+DATASET.PAS Note: Removed property "OldCreateOrder".
+DATASET.PAS Note: Changed Top coord of TButton from "24" to "10" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TButton from "248" to "246" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TComboBox from "24" to "10" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TComboBox from "8" to "6" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TButton from "88" to "74" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TButton from "248" to "246" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TButton from "40" to "26" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TButton from "246" to "244" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TLabeledEdit from "40" to "26" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TLabeledEdit from "8" to "6" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TLabeledEdit from "89" to "75" inside TGroupBox.
+DATASET.PAS Note: Changed Left coord of TLabeledEdit from "8" to "6" inside TGroupBox.
+DATASET.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+DATASET.PAS Note: Changed Left coord of TButton from "251" to "249" inside TPanel.
+RUNOP.PAS Note: Removed property "MaxLength".
+RUNOP.PAS Note: Removed property "TextHeight".
+RUNOP.PAS Note: Removed property "OldCreateOrder".
+RUNOP.PAS Note: Changed Top coord of TSpinEdit from "15" to "13" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TSpinEdit from "128" to "126" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "16" to "14" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "200" to "198" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TLabel from "8" to "6" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TLabel from "24" to "22" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "144" to "142" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "16" to "14" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "144" to "142" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "200" to "198" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "112" to "110" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "16" to "14" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "112" to "110" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "200" to "198" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "80" to "78" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "200" to "198" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TRadioGroup from "8" to "6" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TRadioGroup from "16" to "14" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TRadioGroup from "8" to "6" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TRadioGroup from "200" to "198" inside TPanel.
+RUNOP.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+RUNOP.PAS Note: Changed Left coord of TButton from "288" to "286" inside TPanel.
+OUTOP.PAS Note: Removed property "TextHeight".
+OUTOP.PAS Note: Removed property "OldCreateOrder".
+OUTOP.PAS Note: Changed Top coord of TComboBox from "24" to "10" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TComboBox from "16" to "14" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "264" to "262" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "192" to "190" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TCheckBox from "16" to "2" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TCheckBox from "8" to "6" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "104" to "102" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "16" to "14" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TComboBox from "24" to "10" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TComboBox from "16" to "14" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "240" to "238" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "16" to "14" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TSpinEdit from "20" to "6" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TSpinEdit from "104" to "102" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TLabel from "24" to "10" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TLabel from "64" to "62" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "200" to "198" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "192" to "190" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TSpinEdit from "16" to "2" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TSpinEdit from "104" to "102" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TLabel from "24" to "10" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TLabel from "32" to "30" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "8" to "6" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "192" to "190" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TTrackBar from "56" to "42" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TTrackBar from "16" to "14" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TCheckBox from "24" to "22" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TLabel from "96" to "82" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TLabel from "72" to "70" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TLabel from "96" to "82" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TLabel from "136" to "134" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TLabel from "96" to "82" inside TGroupBox.
+OUTOP.PAS Note: Changed Left coord of TLabel from "16" to "14" inside TGroupBox.
+OUTOP.PAS Note: Changed Top coord of TGroupBox from "72" to "70" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TGroupBox from "192" to "190" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TRadioGroup from "152" to "150" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TRadioGroup from "16" to "14" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TRadioGroup from "8" to "6" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TRadioGroup from "16" to "14" inside TPanel.
+OUTOP.PAS Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+OUTOP.PAS Note: Changed Left coord of TButton from "272" to "270" inside TPanel.
+RUNSPEC.PAS Note: Removed property "TextHeight".
+RUNSPEC.PAS Note: Removed property "OldCreateOrder".
+RUNSPEC.PAS Note: Changed Top coord of TCheckListBox from "34" to "20" inside TGroupBox.
+RUNSPEC.PAS Note: Changed Left coord of TCheckListBox from "2" to "0" inside TGroupBox.
+RUNSPEC.PAS Note: Changed Top coord of TLabel from "18" to "4" inside TGroupBox.
+RUNSPEC.PAS Note: Changed Left coord of TLabel from "2" to "0" inside TGroupBox.
+RUNSPEC.PAS Note: Changed Top coord of TGroupBox from "24" to "22" inside TPanel.
+RUNSPEC.PAS Note: Changed Left coord of TGroupBox from "40" to "38" inside TPanel.
+RUNSPEC.PAS Note: Changed Top coord of TButton from "16" to "14" inside TPanel.
+RUNSPEC.PAS Note: Changed Left coord of TButton from "328" to "326" inside TPanel.
+RUNSPEC.PAS Note: Changed Top coord of TButton from "16" to "14" inside TPanel.
+RUNSPEC.PAS Note: Changed Left coord of TButton from "224" to "222" inside TPanel.
+kies.pas Note: Removed property "TextHeight".
+kies.pas Note: Removed property "OldCreateOrder".
+dynchart.pas Note: Removed property "ThumbLength".
+dynchart.pas Note: Removed property "TextHeight".
+dynchart.pas Note: Removed property "OldCreateOrder".
+dynchart.pas Note: Changed Top coord of TTrackBar from "8" to "6" inside TPanel.
+dynchart.pas Note: Changed Left coord of TTrackBar from "8" to "6" inside TPanel.
+dynchart.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+dynchart.pas Note: Changed Left coord of TButton from "8" to "6" inside TPanel.
+dynchart.pas Note: Changed Top coord of TPanel from "276" to "274" inside TPanel.
+dynchart.pas Note: Changed Left coord of TPanel from "1" to "0" inside TPanel.
+dynchart.pas Note: Changed Top coord of TLabel from "259" to "257" inside TPanel.
+dynchart.pas Note: Changed Left coord of TLabel from "1" to "0" inside TPanel.
+dynchart.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+dynchart.pas Note: Changed Left coord of TButton from "352" to "350" inside TPanel.
+dynpyra.pas Note: Removed property "TextHeight".
+dynpyra.pas Note: Added unit "TAGraph" to uses section.
+Prevent.lpi Note: Added Package TAChartLazarusPkg as a dependency.
+dynpyra.pas Note: Removed property "TabOrder".
+dynpyra.pas Note: Removed property "BevelOuter".
+dynpyra.pas Note: Removed property "View3DWalls".
+dynpyra.pas Note: Removed property "View3D".
+dynpyra.pas Note: Removed property "Legend.LegendStyle".
+dynpyra.pas Note: Removed property "LeftAxis.MinorTicks.Visible".
+dynpyra.pas Note: Removed property "LeftAxis.LabelsSeparation".
+dynpyra.pas Note: Removed property "LeftAxis.Increment".
+dynpyra.pas Note: Removed property "LeftAxis.ExactDateTime".
+dynpyra.pas Note: Removed property "BackWall.Color".
+dynpyra.pas Note: Removed property "BackWall.Brush.Color".
+dynpyra.pas Note: Removed property "TabOrder".
+dynpyra.pas Note: Removed property "BevelOuter".
+dynpyra.pas Note: Removed property "View3DWalls".
+dynpyra.pas Note: Removed property "View3D".
+dynpyra.pas Note: Removed property "RightAxis.MinorTicks.Visible".
+dynpyra.pas Note: Removed property "RightAxis.LabelsSeparation".
+dynpyra.pas Note: Removed property "RightAxis.Increment".
+dynpyra.pas Note: Removed property "RightAxis.ExactDateTime".
+dynpyra.pas Note: Removed property "LeftAxis.LabelsSeparation".
+dynpyra.pas Note: Removed property "LeftAxis.Increment".
+dynpyra.pas Note: Removed property "LeftAxis.ExactDateTime".
+dynpyra.pas Note: Removed property "BackWall.Color".
+dynpyra.pas Note: Removed property "BackWall.Brush.Color".
+dynpyra.pas Note: Changed Top coord of TChart from "1" to "0" inside TPanel.
+dynpyra.pas Note: Changed Left coord of TChart from "305" to "303" inside TPanel.
+dynpyra.pas Note: Changed Top coord of TChart from "1" to "0" inside TPanel.
+dynpyra.pas Note: Changed Left coord of TChart from "1" to "0" inside TPanel.
+dynpyra.pas Note: Changed Top coord of TPanel from "322" to "320" inside TPanel.
+dynpyra.pas Note: Changed Top coord of TLabel from "305" to "303" inside TPanel.
+dynpyra.pas Note: Changed Left coord of TButton from "394" to "392" inside TPanel.
+Fkies.pas Note: Removed property "FileList".
+Fkies.pas Note: Removed property "TextHeight".
+Fkies.pas Note: Removed property "OldCreateOrder".
+Fkies.pas Note: Changed Top coord of TEdit from "28" to "14" inside TGroupBox.
+Fkies.pas Note: Changed Left coord of TEdit from "8" to "6" inside TGroupBox.
+Fkies.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Fkies.pas Note: Changed Left coord of TButton from "224" to "222" inside TPanel.
+Fkies.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Fkies.pas Note: Changed Left coord of TButton from "328" to "326" inside TPanel.
+Grafuit1.pas Note: Removed property "DesignSize".
+Grafuit1.pas Note: Removed property "TextHeight".
+Grafuit1.pas Note: Removed property "OldCreateOrder".
+Grafuit1.pas Note: Added unit "TAGraph" to uses section.
+Grafuit1.pas Note: Added unit "TASeries" to uses section.
+Grafuit1.pas Note: Removed property "YValues.Order".
+Grafuit1.pas Note: Removed property "YValues.Multiplier".
+Grafuit1.pas Note: Removed property "YValues.Name".
+Grafuit1.pas Note: Removed property "YValues.DateTime".
+Grafuit1.pas Note: Removed property "XValues.Order".
+Grafuit1.pas Note: Removed property "XValues.Multiplier".
+Grafuit1.pas Note: Removed property "XValues.Name".
+Grafuit1.pas Note: Removed property "XValues.DateTime".
+Grafuit1.pas Note: Removed property "Pointer.InflateMargins".
+Grafuit1.pas Note: Removed property "Marks.ArrowLength".
+Grafuit1.pas Note: Removed property "YValues.Order".
+Grafuit1.pas Note: Removed property "YValues.Multiplier".
+Grafuit1.pas Note: Removed property "YValues.Name".
+Grafuit1.pas Note: Removed property "YValues.DateTime".
+Grafuit1.pas Note: Removed property "XValues.Order".
+Grafuit1.pas Note: Removed property "XValues.Multiplier".
+Grafuit1.pas Note: Removed property "XValues.Name".
+Grafuit1.pas Note: Removed property "XValues.DateTime".
+Grafuit1.pas Note: Removed property "Pointer.InflateMargins".
+Grafuit1.pas Note: Removed property "Marks.ArrowLength".
+Grafuit1.pas Note: Removed property "YValues.Order".
+Grafuit1.pas Note: Removed property "YValues.Multiplier".
+Grafuit1.pas Note: Removed property "YValues.Name".
+Grafuit1.pas Note: Removed property "YValues.DateTime".
+Grafuit1.pas Note: Removed property "XValues.Order".
+Grafuit1.pas Note: Removed property "XValues.Multiplier".
+Grafuit1.pas Note: Removed property "XValues.Name".
+Grafuit1.pas Note: Removed property "XValues.DateTime".
+Grafuit1.pas Note: Removed property "Pointer.InflateMargins".
+Grafuit1.pas Note: Removed property "Marks.ArrowLength".
+Grafuit1.pas Note: Removed property "YValues.Order".
+Grafuit1.pas Note: Removed property "YValues.Multiplier".
+Grafuit1.pas Note: Removed property "YValues.Name".
+Grafuit1.pas Note: Removed property "YValues.DateTime".
+Grafuit1.pas Note: Removed property "XValues.Order".
+Grafuit1.pas Note: Removed property "XValues.Multiplier".
+Grafuit1.pas Note: Removed property "XValues.Name".
+Grafuit1.pas Note: Removed property "XValues.DateTime".
+Grafuit1.pas Note: Removed property "Pointer.InflateMargins".
+Grafuit1.pas Note: Removed property "Marks.ArrowLength".
+Grafuit1.pas Note: Removed property "TabOrder".
+Grafuit1.pas Note: Removed property "View3D".
+Grafuit1.pas Note: Removed property "TopAxis.Grid.Color".
+Grafuit1.pas Note: Removed property "RightAxis.Grid.Color".
+Grafuit1.pas Note: Removed property "Legend.LegendStyle".
+Grafuit1.pas Note: Removed property "LeftAxis.AxisValuesFormat".
+Grafuit1.pas Note: Removed property "BottomAxis.LabelsSeparation".
+Grafuit1.pas Note: Removed property "BottomAxis.AxisValuesFormat".
+Grafuit1.pas Note: Removed property "BackWall.Color".
+Grafuit1.pas Note: Removed property "BackWall.Brush.Color".
+Grafuit1.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Grafuit1.pas Note: Changed Left coord of TButton from "216" to "214" inside TPanel.
+Grafuit1.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Grafuit1.pas Note: Changed Left coord of TButton from "320" to "318" inside TPanel.
+Tabeluit.pas Note: Removed property "TextHeight".
+Tabeluit.pas Note: Removed property "OldCreateOrder".
+Tabeluit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Tabeluit.pas Note: Changed Left coord of TButton from "320" to "318" inside TPanel.
+dynlijns.pas Note: Removed property "TextHeight".
+dynlijns.pas Note: Added unit "TAGraph" to uses section.
+dynlijns.pas Note: Added unit "TASeries" to uses section.
+dynlijns.pas Note: Removed property "YValues.Order".
+dynlijns.pas Note: Removed property "YValues.Multiplier".
+dynlijns.pas Note: Removed property "YValues.Name".
+dynlijns.pas Note: Removed property "YValues.DateTime".
+dynlijns.pas Note: Removed property "XValues.Order".
+dynlijns.pas Note: Removed property "XValues.Multiplier".
+dynlijns.pas Note: Removed property "XValues.Name".
+dynlijns.pas Note: Removed property "XValues.DateTime".
+dynlijns.pas Note: Removed property "Pointer.InflateMargins".
+dynlijns.pas Note: Removed property "Marks.ArrowLength".
+dynlijns.pas Note: Removed property "YValues.Order".
+dynlijns.pas Note: Removed property "YValues.Multiplier".
+dynlijns.pas Note: Removed property "YValues.Name".
+dynlijns.pas Note: Removed property "YValues.DateTime".
+dynlijns.pas Note: Removed property "XValues.Order".
+dynlijns.pas Note: Removed property "XValues.Multiplier".
+dynlijns.pas Note: Removed property "XValues.Name".
+dynlijns.pas Note: Removed property "XValues.DateTime".
+dynlijns.pas Note: Removed property "Pointer.InflateMargins".
+dynlijns.pas Note: Removed property "Marks.ArrowLength".
+dynlijns.pas Note: Removed property "YValues.Order".
+dynlijns.pas Note: Removed property "YValues.Multiplier".
+dynlijns.pas Note: Removed property "YValues.Name".
+dynlijns.pas Note: Removed property "YValues.DateTime".
+dynlijns.pas Note: Removed property "XValues.Order".
+dynlijns.pas Note: Removed property "XValues.Multiplier".
+dynlijns.pas Note: Removed property "XValues.Name".
+dynlijns.pas Note: Removed property "XValues.DateTime".
+dynlijns.pas Note: Removed property "Pointer.InflateMargins".
+dynlijns.pas Note: Removed property "Marks.ArrowLength".
+dynlijns.pas Note: Removed property "YValues.Order".
+dynlijns.pas Note: Removed property "YValues.Multiplier".
+dynlijns.pas Note: Removed property "YValues.Name".
+dynlijns.pas Note: Removed property "YValues.DateTime".
+dynlijns.pas Note: Removed property "XValues.Order".
+dynlijns.pas Note: Removed property "XValues.Multiplier".
+dynlijns.pas Note: Removed property "XValues.Name".
+dynlijns.pas Note: Removed property "XValues.DateTime".
+dynlijns.pas Note: Removed property "Pointer.InflateMargins".
+dynlijns.pas Note: Removed property "Marks.ArrowLength".
+dynlijns.pas Note: Removed property "TabOrder".
+dynlijns.pas Note: Removed property "View3D".
+dynlijns.pas Note: Removed property "TopAxis.Grid.Color".
+dynlijns.pas Note: Removed property "RightAxis.Grid.Color".
+dynlijns.pas Note: Removed property "Legend.LegendStyle".
+dynlijns.pas Note: Removed property "LeftAxis.AxisValuesFormat".
+dynlijns.pas Note: Removed property "BottomAxis.LabelsSeparation".
+dynlijns.pas Note: Removed property "BottomAxis.AxisValuesFormat".
+dynlijns.pas Note: Removed property "BackWall.Color".
+dynlijns.pas Note: Removed property "BackWall.Brush.Color".
+dynlijns.pas Note: Changed Left coord of TButton from "360" to "358" inside TPanel.
+dynbars.pas Note: Removed property "TextHeight".
+dynbars.pas Note: Added unit "TAGraph" to uses section.
+dynbars.pas Note: Added unit "TASeries" to uses section.
+dynbars.pas Note: Removed property "YValues.Order".
+dynbars.pas Note: Removed property "YValues.Multiplier".
+dynbars.pas Note: Removed property "YValues.Name".
+dynbars.pas Note: Removed property "YValues.DateTime".
+dynbars.pas Note: Removed property "XValues.Order".
+dynbars.pas Note: Removed property "XValues.Multiplier".
+dynbars.pas Note: Removed property "XValues.Name".
+dynbars.pas Note: Removed property "XValues.DateTime".
+dynbars.pas Note: Removed property "Marks.ArrowLength".
+dynbars.pas Note: Removed property "YValues.Order".
+dynbars.pas Note: Removed property "YValues.Multiplier".
+dynbars.pas Note: Removed property "YValues.Name".
+dynbars.pas Note: Removed property "YValues.DateTime".
+dynbars.pas Note: Removed property "XValues.Order".
+dynbars.pas Note: Removed property "XValues.Multiplier".
+dynbars.pas Note: Removed property "XValues.Name".
+dynbars.pas Note: Removed property "XValues.DateTime".
+dynbars.pas Note: Removed property "Marks.ArrowLength".
+dynbars.pas Note: Removed property "TabOrder".
+dynbars.pas Note: Removed property "View3D".
+dynbars.pas Note: Removed property "BackWall.Color".
+dynbars.pas Note: Removed property "BackWall.Brush.Color".
+rfoptions.pas Note: Removed property "TextHeight".
+rfoptions.pas Note: Removed property "OldCreateOrder".
+rfoptions.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+rfoptions.pas Note: Changed Left coord of TButton from "216" to "214" inside TPanel.
+rfoptions.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+rfoptions.pas Note: Changed Left coord of TButton from "312" to "310" inside TPanel.
+Disoptions.pas Note: Removed property "TextHeight".
+Disoptions.pas Note: Removed property "OldCreateOrder".
+Disoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TGroupBox from "96" to "94" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TGroupBox from "191" to "189" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TGroupBox from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TGroupBox from "192" to "190" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TGroupBox from "96" to "94" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TGroupBox from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TGroupBox from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TGroupBox from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Disoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Disoptions.pas Note: Changed Top coord of TGroupBox from "176" to "174" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TGroupBox from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TButton from "176" to "174" inside TPanel.
+Disoptions.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Disoptions.pas Note: Changed Left coord of TButton from "280" to "278" inside TPanel.
+Popoptions.pas Note: Removed property "TPanel".
+Popoptions.pas Note: Removed property "TextHeight".
+Popoptions.pas Note: Removed property "OldCreateOrder".
+Popoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TGroupBox from "136" to "134" inside TPanel.
+Popoptions.pas Note: Changed Left coord of TGroupBox from "184" to "182" inside TPanel.
+Popoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TGroupBox from "8" to "6" inside TPanel.
+Popoptions.pas Note: Changed Left coord of TGroupBox from "8" to "6" inside TPanel.
+Popoptions.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Popoptions.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+Popoptions.pas Note: Changed Top coord of TGroupBox from "136" to "134" inside TPanel.
+Popoptions.pas Note: Changed Left coord of TGroupBox from "8" to "6" inside TPanel.
+Popoptions.pas Note: Changed Top coord of TRadioGroup from "8" to "6" inside TPanel.
+Popoptions.pas Note: Changed Left coord of TRadioGroup from "184" to "182" inside TPanel.
+memomes.pas Note: Removed property "TextHeight".
+memomes.pas Note: Removed property "OldCreateOrder".
+memomes.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+memomes.pas Note: Changed Left coord of TButton from "176" to "174" inside TPanel.
+memomes.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+memomes.pas Note: Changed Left coord of TButton from "272" to "270" inside TPanel.
+Sensunit.pas Note: Removed property "TextHeight".
+Sensunit.pas Note: Removed property "OldCreateOrder".
+Sensunit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Sensunit.pas Note: Changed Left coord of TButton from "120" to "118" inside TPanel.
+Sensunit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Sensunit.pas Note: Changed Left coord of TButton from "208" to "206" inside TPanel.
+parasel.pas Note: Removed property "TextHeight".
+parasel.pas Note: Removed property "OldCreateOrder".
+parasel.pas Note: Changed Top coord of TCheckBox from "80" to "66" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "64" to "50" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "32" to "18" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "16" to "2" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "96" to "82" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "64" to "50" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "80" to "66" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "48" to "34" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "32" to "18" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TCheckBox from "16" to "2" inside TGroupBox.
+parasel.pas Note: Changed Left coord of TCheckBox from "16" to "14" inside TGroupBox.
+parasel.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+parasel.pas Note: Changed Left coord of TButton from "320" to "318" inside TPanel.
+Permusens.pas Note: Removed property "TextHeight".
+Permusens.pas Note: Removed property "OldCreateOrder".
+Permusens.pas Note: Changed Top coord of TLabel from "16" to "2" inside TGroupBox.
+Permusens.pas Note: Changed Left coord of TLabel from "2" to "0" inside TGroupBox.
+Permusens.pas Note: Changed Top coord of TGroupBox from "64" to "50" inside TGroupBox.
+Permusens.pas Note: Changed Left coord of TGroupBox from "2" to "0" inside TGroupBox.
+Permusens.pas Note: Changed Top coord of TButton from "24" to "10" inside TGroupBox.
+Permusens.pas Note: Changed Left coord of TButton from "104" to "102" inside TGroupBox.
+Permusens.pas Note: Changed Top coord of TSpinEdit from "24" to "10" inside TGroupBox.
+Permusens.pas Note: Changed Left coord of TSpinEdit from "24" to "22" inside TGroupBox.
+Permusens.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+Permusens.pas Note: Changed Left coord of TButton from "320" to "318" inside TPanel.
+GetnameUnit.pas Note: Removed property "TextHeight".
+GetnameUnit.pas Note: Removed property "OldCreateOrder".
+GetnameUnit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+GetnameUnit.pas Note: Changed Left coord of TButton from "194" to "192" inside TPanel.
+GetnameUnit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+GetnameUnit.pas Note: Changed Left coord of TButton from "287" to "285" inside TPanel.
+PredefintUnit.pas Note: Removed property "TextHeight".
+PredefintUnit.pas Note: Removed property "OldCreateOrder".
+PredefintUnit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+PredefintUnit.pas Note: Changed Left coord of TButton from "320" to "318" inside TPanel.
+PredefintUnit.pas Note: Changed Top coord of TButton from "8" to "6" inside TPanel.
+PredefintUnit.pas Note: Changed Left coord of TButton from "416" to "414" inside TPanel.
+ Progress: Conversion took: 00:01:05
+ : Conversion Ready.

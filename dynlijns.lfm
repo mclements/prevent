@@ -1,0 +1,71 @@
+inherited dynlijnen: Tdynlijnen
+  Caption = 'dynlijnen'
+  PixelsPerInch = 96
+  inherited Panel1: TPanel
+    inherited CloseBut: TButton
+      Left = 358
+    end
+  end
+  object Chart1: TChart[2]
+    Left = 0
+    Top = 0
+    Width = 448
+    Height = 318
+    Foot.Font.Charset = DEFAULT_CHARSET
+    Foot.Font.Color = clRed
+    Foot.Font.Height = -12
+    Foot.Font.Name = 'Arial'
+    Foot.Font.Style = [fsItalic]
+    Title.Text.Strings = (
+      'TChart Component'
+    )
+    BackColor = clWhite
+    BottomAxis.Grid.Color = clScrollBar
+    BottomAxis.Grid.Visible = False
+    LeftAxis.Grid.Color = clScrollBar
+    Legend.Alignment = laBottom
+    Align = alClient
+    object LineSeries1: TLineSeries
+      Marks.Arrow.Visible = False
+      Marks.Frame.Visible = False
+      Marks.Style = smsLegend
+      Marks.Visible = False
+      SeriesColor = 50176
+      LinePen.Color = clLime
+      LinePen.Width = 3
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 176
+      Top = 104
+    end
+    object LineSeries2: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clLime
+      LinePen.Style = psDot
+      LinePen.Width = 2
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 184
+      Top = 152
+    end
+    object LineSeries3: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clBlue
+      LinePen.Width = 3
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 88
+      Top = 168
+    end
+    object LineSeries4: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clAqua
+      LinePen.Style = psDot
+      LinePen.Width = 2
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 168
+      Top = 208
+    end
+  end
+end

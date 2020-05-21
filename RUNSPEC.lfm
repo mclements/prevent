@@ -1,0 +1,109 @@
+object runForm: TrunForm
+  Left = 249
+  Top = 154
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Prevent run specification'
+  ClientHeight = 300
+  ClientWidth = 427
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'System'
+  Font.Style = []
+  Scaled = False
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 251
+    Width = 427
+    Height = 49
+    Align = alBottom
+    TabOrder = 0
+    object cancelbut: TButton
+      Left = 222
+      Top = 14
+      Width = 89
+      Height = 25
+      Hint = 'Cancel selections and return to main form'
+      Caption = '&Cancel'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = cancelbutClick
+    end
+    object Donebut: TButton
+      Left = 326
+      Top = 14
+      Width = 89
+      Height = 25
+      Hint = 'Start simulation run'
+      Caption = '&Done'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      OnClick = DonebutClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 427
+    Height = 251
+    Align = alClient
+    TabOrder = 1
+    object rfGroupBox: TGroupBox
+      Left = 38
+      Top = 22
+      Width = 345
+      Height = 153
+      Caption = 'Risk factors defined'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 0
+        Top = 4
+        Width = 341
+        Height = 16
+        Align = alTop
+      end
+      object RisFacListBox: TCheckListBox
+        Left = 0
+        Top = 20
+        Width = 341
+        Height = 117
+        Align = alClient
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ItemHeight = 16
+        ParentFont = False
+        TabOrder = 0
+        OnClick = RisFacListBoxClick
+      end
+    end
+  end
+end

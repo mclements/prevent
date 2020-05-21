@@ -1,0 +1,65 @@
+object RFOpForm: TRFOpForm
+  Left = 219
+  Top = 229
+  Width = 407
+  Height = 273
+  Caption = 'RFOpForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 205
+    Width = 399
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object OKBut: TButton
+      Left = 310
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = OKButClick
+    end
+    object EscBut: TButton
+      Left = 214
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = EscButClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 399
+    Height = 33
+    Align = alTop
+    Caption = 'No risk factor options yet'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 33
+    Width = 399
+    Height = 172
+    Align = alClient
+    TabOrder = 2
+  end
+end

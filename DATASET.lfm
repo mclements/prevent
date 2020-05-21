@@ -1,0 +1,138 @@
+object datasetForm: TdatasetForm
+  Left = 270
+  Top = 132
+  Width = 358
+  Height = 307
+  Caption = 'Prevent data sets'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  Scaled = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 239
+    Width = 350
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object closebut: TButton
+      Left = 249
+      Top = 6
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Close'
+      TabOrder = 0
+      OnClick = closebutClick
+    end
+  end
+  object DataPage: TPageControl
+    Left = 0
+    Top = 0
+    Width = 350
+    Height = 239
+    ActivePage = CurrentTab
+    Align = alClient
+    TabOrder = 1
+    object CurrentTab: TTabSheet
+      Caption = 'Current'
+      OnEnter = CurrentTabEnter
+      object DatasetList: TListBox
+        Left = 0
+        Top = 0
+        Width = 342
+        Height = 208
+        Align = alClient
+        ItemHeight = 16
+        TabOrder = 0
+      end
+    end
+    object NewTab: TTabSheet
+      Caption = 'Install'
+      ImageIndex = 1
+      object InstallBox: TGroupBox
+        Left = 0
+        Top = 8
+        Width = 337
+        Height = 129
+        Caption = 'Install'
+        TabOrder = 0
+        object setnameEdit: TLabeledEdit
+          Left = 6
+          Top = 75
+          Width = 225
+          Height = 24
+          EditLabel.Width = 85
+          EditLabel.Height = 16
+          EditLabel.Caption = 'Data set name'
+          TabOrder = 0
+        end
+        object BestandEdit: TLabeledEdit
+          Left = 6
+          Top = 26
+          Width = 225
+          Height = 24
+          EditLabel.Width = 69
+          EditLabel.Height = 16
+          EditLabel.Caption = 'Data set file'
+          TabOrder = 1
+        end
+        object BrowseBut: TButton
+          Left = 244
+          Top = 26
+          Width = 75
+          Height = 25
+          Caption = 'Browse'
+          TabOrder = 2
+          OnClick = BrowseButClick
+        end
+        object SaveBut: TButton
+          Left = 246
+          Top = 74
+          Width = 75
+          Height = 25
+          Caption = 'Save'
+          TabOrder = 3
+          OnClick = SaveButClick
+        end
+      end
+      object UninstallBox: TGroupBox
+        Left = 0
+        Top = 144
+        Width = 337
+        Height = 57
+        Caption = 'Uninstall'
+        TabOrder = 1
+        object UninstallCombo: TComboBox
+          Left = 6
+          Top = 10
+          Width = 225
+          Height = 24
+          ItemHeight = 0
+          TabOrder = 0
+          Text = 'Choose dataset to uninstall'
+        end
+        object UninstBut: TButton
+          Left = 246
+          Top = 10
+          Width = 75
+          Height = 25
+          Caption = 'Uninstall'
+          TabOrder = 1
+          OnClick = UninstButClick
+        end
+      end
+    end
+  end
+  object FileOpenDialog: TOpenDialog
+    DefaultExt = 'mdb'
+    Filter = 'Access files|*.mdb'
+    Left = 196
+    Top = 27
+  end
+end

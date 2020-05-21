@@ -1,0 +1,265 @@
+object outopform: Toutopform
+  Left = 271
+  Top = 134
+  Width = 388
+  Height = 401
+  Caption = 'Prevent output options'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'System'
+  Font.Style = []
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 333
+    Width = 380
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object closebut: TButton
+      Left = 270
+      Top = 6
+      Width = 89
+      Height = 25
+      Hint = 'Use current settings'
+      Caption = '&Close'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = closebutClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 380
+    Height = 333
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    object chartGroup: TRadioGroup
+      Left = 14
+      Top = 6
+      Width = 161
+      Height = 89
+      Hint = 'Graphs or numbers'
+      Caption = 'Output to:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ItemIndex = 0
+      Items.Strings = (
+        'Chart'
+        'Table'
+        'File'
+      )
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = chartGroupClick
+    end
+    object hdpop: TRadioGroup
+      Left = 14
+      Top = 150
+      Width = 161
+      Height = 81
+      Caption = 'Rates or Numbers'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ItemIndex = 0
+      Items.Strings = (
+        'Rates (*100,000)'
+        'Population numbers'
+      )
+      ParentFont = False
+      TabOrder = 1
+    end
+    object DynGroup: TGroupBox
+      Left = 190
+      Top = 70
+      Width = 177
+      Height = 121
+      Caption = 'Dynamic Charts'
+      TabOrder = 2
+      object FastLabel: TLabel
+        Left = 14
+        Top = 82
+        Width = 26
+        Height = 16
+        Caption = 'Fast'
+      end
+      object SlowLabel: TLabel
+        Left = 134
+        Top = 82
+        Width = 28
+        Height = 16
+        Caption = 'Slow'
+      end
+      object PlaybackLabel: TLabel
+        Left = 70
+        Top = 82
+        Width = 37
+        Height = 16
+        Caption = 'Speed'
+      end
+      object syncheck: TCheckBox
+        Left = 22
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Synchronized'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+      object Dynspeed: TTrackBar
+        Left = 14
+        Top = 42
+        Width = 150
+        Height = 33
+        TabOrder = 1
+      end
+    end
+    object ExpecGroup: TGroupBox
+      Left = 190
+      Top = 6
+      Width = 177
+      Height = 57
+      Caption = 'Life Expectancy'
+      TabOrder = 3
+      object ageLabel: TLabel
+        Left = 30
+        Top = 10
+        Width = 42
+        Height = 16
+        Caption = 'At age:'
+      end
+      object ExpecageSpin: TSpinEdit
+        Left = 102
+        Top = 2
+        Width = 41
+        Height = 26
+        Increment = 5
+        MaxValue = 110
+        MinValue = 0
+        TabOrder = 0
+        Value = 0
+        OnChange = ExpecageSpinChange
+      end
+    end
+    object poppropbox: TGroupBox
+      Left = 190
+      Top = 198
+      Width = 177
+      Height = 57
+      Caption = 'Proportion population over'
+      TabOrder = 4
+      object AgLabel: TLabel
+        Left = 62
+        Top = 10
+        Width = 25
+        Height = 16
+        Caption = 'age:'
+      end
+      object proppopSpin: TSpinEdit
+        Left = 102
+        Top = 6
+        Width = 49
+        Height = 26
+        Increment = 5
+        MaxValue = 110
+        MinValue = 0
+        TabOrder = 0
+        Value = 60
+        OnChange = proppopSpinChange
+      end
+    end
+    object deeldoorbox: TGroupBox
+      Left = 14
+      Top = 238
+      Width = 161
+      Height = 57
+      Caption = 'Population divisor'
+      TabOrder = 5
+      object PopdivCombo: TComboBox
+        Left = 14
+        Top = 10
+        Width = 129
+        Height = 24
+        ItemHeight = 16
+        TabOrder = 0
+        Text = 'PopdivCombo'
+        OnChange = PopdivComboChange
+        Items.Strings = (
+          '1'
+          '10'
+          '100'
+          '1000'
+          '10000'
+          '100000'
+          '1000000'
+        )
+      end
+    end
+    object charty0box: TGroupBox
+      Left = 14
+      Top = 102
+      Width = 161
+      Height = 41
+      Caption = 'Static chart y-axis'
+      TabOrder = 6
+      object Y0Check: TCheckBox
+        Left = 6
+        Top = 2
+        Width = 97
+        Height = 17
+        Caption = 'Start at 0'
+        TabOrder = 0
+      end
+    end
+    object MoneyBox: TGroupBox
+      Left = 190
+      Top = 262
+      Width = 177
+      Height = 57
+      Caption = 'Cost output per'
+      TabOrder = 7
+      object MoneydivComboBox: TComboBox
+        Left = 14
+        Top = 10
+        Width = 145
+        Height = 24
+        ItemHeight = 16
+        TabOrder = 0
+        Text = 'MoneydivComboBox'
+        OnChange = MoneydivComboBoxChange
+      end
+    end
+  end
+  object fileSaveDialog: TSaveDialog
+    Left = 136
+    Top = 40
+  end
+end

@@ -1,0 +1,180 @@
+inherited dynpyramid: Tdynpyramid
+  Left = 274
+  Top = 210
+  Width = 550
+  Height = 432
+  Caption = 'dynpyramid'
+  PixelsPerInch = 96
+  inherited Panel1: TPanel
+    Top = 364
+    Width = 542
+    inherited CloseBut: TButton
+      Left = 392
+    end
+  end
+  inherited Panel2: TPanel
+    Left = 490
+    Height = 364
+    inherited Jaarlab: TLabel
+      Top = 303
+    end
+    inherited Panel3: TPanel
+      Top = 320
+    end
+  end
+  object ChartPan: TPanel[2]
+    Left = 0
+    Top = 0
+    Width = 490
+    Height = 364
+    Align = alClient
+    TabOrder = 2
+    object MenChart: TChart
+      Left = 0
+      Top = 0
+      Width = 128
+      Height = 362
+      Title.Text.Strings = (
+        'Men'
+      )
+      BackColor = clWhite
+      BottomAxis.Inverted = True
+      Legend.Visible = False
+      Align = alLeft
+      object Mshared: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Un changed'
+        VertAxis = aRightAxis
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        MultiBar = mbStacked
+        SideMargins = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+      object Mloss: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Loss'
+        VertAxis = aRightAxis
+        BarBrush.Color = clYellow
+        BarBrush.Style = bsHorizontal
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        MultiBar = mbStacked
+        SideMargins = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+      object Mgain: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Gain'
+        VertAxis = aRightAxis
+        BarBrush.Color = clLime
+        BarBrush.Style = bsHorizontal
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        MultiBar = mbStacked
+        SideMargins = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+    end
+    object WomenChart: TChart
+      Left = 303
+      Top = 0
+      Width = 184
+      Height = 362
+      Title.Text.Strings = (
+        'Women'
+      )
+      BackColor = clWhite
+      Align = alRight
+      object Wshared: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.BackColor = clWhite
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Unchanged'
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        MultiBar = mbStacked
+        SideMargins = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+      object Wloss: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Loss'
+        BarBrush.Color = clYellow
+        BarBrush.Style = bsHorizontal
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        MultiBar = mbStacked
+        SideMargins = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+      object Wgain: THorizBarSeries
+        Marks.ArrowLength = 20
+        Marks.Visible = False
+        SeriesColor = clRed
+        Title = 'Gain'
+        AutoMarkPosition = False
+        BarBrush.Color = clLime
+        BarBrush.Style = bsHorizontal
+        BarPen.Width = 2
+        BarWidthPercent = 100
+        Dark3D = False
+        MultiBar = mbStacked
+        SideMargins = False
+        UseYOrigin = False
+        XValues.DateTime = False
+        XValues.Name = 'Bar'
+        XValues.Multiplier = 1
+        XValues.Order = loNone
+        YValues.DateTime = False
+        YValues.Name = 'Y'
+        YValues.Multiplier = 1
+        YValues.Order = loNone
+      end
+    end
+  end
+end

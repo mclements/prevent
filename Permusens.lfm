@@ -1,0 +1,90 @@
+object PermuForm: TPermuForm
+  Left = 262
+  Top = 127
+  Width = 427
+  Height = 239
+  Caption = 'PermuForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  object BotPanel: TPanel
+    Left = 0
+    Top = 171
+    Width = 419
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object CloseBut: TButton
+      Left = 318
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Close'
+      TabOrder = 0
+      OnClick = CloseButClick
+    end
+  end
+  object PermuRadio: TRadioGroup
+    Left = 24
+    Top = 24
+    Width = 145
+    Height = 105
+    Caption = 'Test on variables'
+    ItemIndex = 0
+    Items.Strings = (
+      'Separately'
+      'All simultaneously'
+    )
+    TabOrder = 1
+  end
+  object RangeGroup: TGroupBox
+    Left = 200
+    Top = 24
+    Width = 185
+    Height = 105
+    Caption = 'Range of sensitivity'
+    TabOrder = 2
+    object RangeSpin: TSpinEdit
+      Left = 22
+      Top = 10
+      Width = 57
+      Height = 22
+      Increment = 10
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 0
+      Value = 0
+    end
+    object ChooseBut: TButton
+      Left = 102
+      Top = 10
+      Width = 65
+      Height = 25
+      Caption = '&Choose'
+      TabOrder = 1
+      OnClick = ChooseButClick
+    end
+    object LabGroup: TGroupBox
+      Left = 0
+      Top = 50
+      Width = 181
+      Height = 39
+      Caption = 'Values chosen (%)'
+      TabOrder = 2
+      object Label1: TLabel
+        Left = 0
+        Top = 2
+        Width = 177
+        Height = 21
+        Align = alBottom
+        AutoSize = False
+        Caption = 'Plus and minus:'
+      end
+    end
+  end
+end

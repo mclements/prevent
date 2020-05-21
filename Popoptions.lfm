@@ -1,0 +1,115 @@
+object PopopForm: TPopopForm
+  Left = 245
+  Top = 136
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'PopopForm'
+  ClientHeight = 273
+  ClientWidth = 367
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 367
+    Height = 232
+    Align = alClient
+    TabOrder = 1
+    object realpop: TRadioGroup
+      Left = 182
+      Top = 6
+      Width = 169
+      Height = 89
+      Caption = 'Population type'
+      ItemIndex = 0
+      Items.Strings = (
+        'Real population'
+        'Stationary population'
+      )
+      TabOrder = 0
+      OnClick = realpopClick
+    end
+    object MigrGroup: TGroupBox
+      Left = 6
+      Top = 134
+      Width = 169
+      Height = 81
+      Caption = 'Migration'
+      TabOrder = 1
+      object MigratieCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Migration'
+        TabOrder = 0
+        OnClick = MigratieCheckClick
+      end
+      object Migrboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object OtherMorGroup: TGroupBox
+      Left = 6
+      Top = 6
+      Width = 169
+      Height = 89
+      Caption = 'Other mortality trends'
+      TabOrder = 2
+      object OvMortTrendCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = OvMortTrendCheckClick
+      end
+      object Trendboth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+    object FertGroup: TGroupBox
+      Left = 182
+      Top = 134
+      Width = 169
+      Height = 81
+      Caption = 'Fertility'
+      TabOrder = 3
+      object FertCheck: TCheckBox
+        Left = 14
+        Top = 10
+        Width = 97
+        Height = 17
+        Caption = 'Trends'
+        TabOrder = 0
+        OnClick = FertCheckClick
+      end
+      object fertBoth: TCheckBox
+        Left = 14
+        Top = 34
+        Width = 145
+        Height = 17
+        Caption = 'Intervention scenario only'
+        TabOrder = 1
+      end
+    end
+  end
+end
