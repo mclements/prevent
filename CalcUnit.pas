@@ -1,7 +1,9 @@
 unit CalcUnit;
 
+{$MODE Delphi}
+
 interface
-uses disunit;
+uses DisUnit;
 Type
 
   Tnar=array of Double;

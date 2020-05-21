@@ -34,10 +34,12 @@
 
 unit HTMLHelpViewer;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Types, Classes, Forms;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Types, Classes, Forms;
 
 // Commands to pass to HtmlHelp()
 const

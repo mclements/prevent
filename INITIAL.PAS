@@ -1,4 +1,6 @@
-unit initial;
+unit INITIAL;
+
+{$MODE Delphi}
 
 interface
 
@@ -141,7 +143,7 @@ var
 {----------------------------------------------------------------------}
 implementation
 
-uses winglob,Teengine,chart,series,grafuit1,dynlijns,tabeluit,outop,bevolun,
+uses WINGLOB,Teengine,chart,series,Grafuit1,dynlijns,Tabeluit,OUTOP,BEVOLUN,
      math;
 
 constructor Tdistribution.create(n:string);

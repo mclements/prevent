@@ -1,12 +1,13 @@
-unit Prevmain;
+unit PREVMAIN;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Menus, Tabs, StdCtrls, ExtCtrls, TabNotBk, Buttons,
-  ComCtrls,checklst, GIFImage{, LED{,
-  ComCtrls};
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, Menus, Tabs, StdCtrls, ExtCtrls, Buttons,
+  ComCtrls,checklst;
 
 type
   TMainForm = class(TForm)
@@ -124,12 +125,12 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses math,gescale, winglob,aboutun,dataset,runop, outop, runspec,
-     tabeluit, grafuit1,
-     initial,disunit,startun,dynchart, bevolun,calcunit,
-  memomes,sensunit,
+uses math,GESCALE, WINGLOB,ABOUTUN,DATASET,RUNOP, OUTOP, RUNSPEC,
+     Tabeluit, Grafuit1,
+     INITIAL,DisUnit,STARTUN,dynchart, BEVOLUN,CalcUnit,
+  memomes,Sensunit,
   OutvarUnit, Disoptions, Popoptions;
 
 var    startt,stopt:Tdatetime;

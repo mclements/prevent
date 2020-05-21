@@ -1,9 +1,11 @@
 unit Fkies;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   FileCtrl, StdCtrls, ExtCtrls;
 
 type
@@ -39,9 +41,9 @@ var
 
 implementation
 
-uses gescale,winglob,outop;
+uses GESCALE,WINGLOB,OUTOP;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TFkiesForm.DirectoryListBox1Change(Sender: TObject);
 begin

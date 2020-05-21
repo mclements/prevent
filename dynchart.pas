@@ -1,11 +1,13 @@
 unit dynchart;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, Chart, Series, ExtCtrls, StdCtrls,
-  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}initial, ComCtrls;
+  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}INITIAL, ComCtrls;
 
 type
   Tdyngraf = class(TForm)
@@ -42,8 +44,8 @@ var
 
 implementation
 
-{$R *.DFM}
-uses gescale,winglob,outop,math;
+{$R *.lfm}
+uses GESCALE,WINGLOB,OUTOP,math;
 
 
 procedure Tdyngraf.doen(ymin,ymax:double;uitnaam,ls1,ls2,ls3,ls4:string);

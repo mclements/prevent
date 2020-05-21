@@ -1,7 +1,9 @@
 unit OutvarUnit;
 
+{$MODE Delphi}
+
 interface
-uses classes,StdCtrls, Dialogs,initial;
+uses classes,StdCtrls, Dialogs,INITIAL;
 
 Type
   Tdisuitvars=(invr,prevr,cfatvr,remivr,morvr,dalvr,cosvr,pifvr);
@@ -238,8 +240,8 @@ var
 
 implementation
 
-uses forms,math,sysutils,teengine,controls,prevmain,kies,bevolun,disunit,outop,dynlijns,grafuit1,
-     dynpyra,dynbars,tabeluit;
+uses forms,math,sysutils,teengine,controls,PREVMAIN,kies,BEVOLUN,DisUnit,OUTOP,dynlijns,Grafuit1,
+     dynpyra,dynbars,Tabeluit;
 
 constructor Tgenuit.create(tt:integer);
 var

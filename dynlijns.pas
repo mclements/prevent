@@ -1,11 +1,13 @@
 unit dynlijns;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  dynchart, ComCtrls, StdCtrls, ExtCtrls, TeEngine, Series, TeeProcs, Chart,
-  initial;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls,
+  Forms, Dialogs, dynchart, ComCtrls, StdCtrls, ExtCtrls, TAGraph, TASeries,
+  TeEngine, Series, TeeProcs, Chart, INITIAL;
 
 type
   Tdynlijnen = class(Tdyngraf)
@@ -29,9 +31,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,winglob,outop,math;
+uses GESCALE,WINGLOB,OUTOP,math;
 
 
 

@@ -1,7 +1,9 @@
 unit trendintvunit;
 
+{$MODE Delphi}
+
 interface
-uses classes,initial;
+uses classes,INITIAL;
 
 Type
   Tvarel=record
@@ -132,7 +134,7 @@ Type
 implementation
 
 Uses
-  dataset,datmod1,sysutils;
+  DATASET,datmod1,sysutils;
 
 
 constructor Tmvarbase.create(tn:string;numrs:boolean);

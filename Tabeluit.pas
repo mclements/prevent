@@ -1,10 +1,12 @@
 unit Tabeluit;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,initial, HgHGrid, HgGrid;
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,INITIAL, HgHGrid, HgGrid;
 
 type
   Ttableuitform = class(TForm)
@@ -34,9 +36,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,winglob, Prevmain,Clipbrd;
+uses GESCALE,WINGLOB, PREVMAIN,Clipbrd;
 
 const col0=70;
       colmid=75;

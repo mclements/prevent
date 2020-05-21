@@ -1,9 +1,11 @@
 unit Popoptions;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -42,8 +44,8 @@ var
 
 implementation
 
-{$R *.DFM}
-uses gescale,winglob,initial,predefintunit, Dataset, datmod1,bevolun, Prevmain;
+{$R *.lfm}
+uses GESCALE,WINGLOB,INITIAL,PredefintUnit, DATASET, datmod1,BEVOLUN, PREVMAIN;
 
 
 procedure TPopopForm.OKButClick(Sender: TObject);

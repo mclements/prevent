@@ -1,10 +1,12 @@
-unit Startun;
+unit STARTUN;
+
+{$MODE Delphi}
 
 interface
 Uses
   forms,dialogs,sysutils,inifiles,classes,
   INITIAL,
-  winglob;
+  WINGLOB;
 
 Procedure Opening;
 

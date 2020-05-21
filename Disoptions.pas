@@ -1,10 +1,12 @@
 unit Disoptions;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  disunit, StdCtrls, ExtCtrls;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  DisUnit, StdCtrls, ExtCtrls;
 
 type
   TDisopForm=class(TForm)
@@ -49,8 +51,8 @@ var
 
 implementation
 
-{$R *.DFM}
-uses gescale,winglob,initial, PredefintUnit, Dataset, datmod1;
+{$R *.lfm}
+uses GESCALE,WINGLOB,INITIAL, PredefintUnit, DATASET, datmod1;
 
 
 procedure TDisopForm.OKButClick(Sender: TObject);

@@ -1,9 +1,11 @@
-unit Dataset;
+unit DATASET;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, inifiles, ComCtrls, Menus;
 
 const GDPstring:string='GDP per capita';
@@ -62,10 +64,10 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses DAODatabase,gescale,winglob, datmod1,db,prevmain, initial,disunit,bevolun,
-  Runop,math;
+uses DAODatabase,GESCALE,WINGLOB, datmod1,db,PREVMAIN, INITIAL,DisUnit,BEVOLUN,
+  RUNOP,math;
 
 const
   rlijnhoogte=30;
