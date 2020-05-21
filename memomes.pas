@@ -1,9 +1,11 @@
 unit memomes;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -28,9 +30,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,datmod1,dataset;
+uses GESCALE,datmod1,DATASET;
 
 procedure TMemoForm.FormCreate(Sender: TObject);
 begin

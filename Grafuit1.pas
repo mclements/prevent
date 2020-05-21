@@ -1,11 +1,13 @@
-unit grafuit1;
+unit Grafuit1;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Chart, Series, ExtCtrls, StdCtrls,
-  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}initial;
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, Chart, Series, ExtCtrls, StdCtrls, TAGraph, TASeries,
+  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}INITIAL;
 
 type
   Tgraphuit1 = class(TForm)
@@ -35,8 +37,8 @@ var
  
 implementation
 
-{$R *.DFM}
-uses gescale,winglob, Outop,math;
+{$R *.lfm}
+uses GESCALE,WINGLOB, OUTOP,math;
 
 procedure Tgraphuit1.doen(uitnaam,ls1,ls2,ls3,ls4:string);
 begin

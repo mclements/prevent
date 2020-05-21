@@ -1,9 +1,11 @@
-unit Aboutun;
+unit ABOUTUN;
+
+{$MODE Delphi}
 
 interface
 
-uses WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, GIFImage;
+uses LCLIntf, LCLType, LMessages, Classes, Graphics, Forms, Controls, StdCtrls,
+  Buttons, ExtCtrls;
 
 type
   TAboutBox = class(TForm)
@@ -37,7 +39,7 @@ var
 implementation
 
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TAboutBox.FormCreate(Sender: TObject);
 begin

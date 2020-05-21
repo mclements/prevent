@@ -1,10 +1,12 @@
 unit Sensunit;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, CheckLst, Grids, DBGrids,initial;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, CheckLst, Grids, DBGrids,INITIAL;
 
 type
   TSensForm = class(TForm)
@@ -145,10 +147,10 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses math,winglob, datmod1, runop, parasel, permusens,prevmain,disunit,
-  memomes, Aboutun, Fkies, Outop, Dataset;
+uses math,WINGLOB, datmod1, RUNOP, parasel, Permusens,PREVMAIN,DisUnit,
+  memomes, ABOUTUN, Fkies, OUTOP, DATASET;
 
 var sensinstance:Tsensinstance;
     testuit:Text;

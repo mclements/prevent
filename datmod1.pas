@@ -1,10 +1,12 @@
 unit datmod1;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DBTables, Db, DAODatabase, DAODataset, DAOQuery;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  sqldb, Db, DAODatabase, DAODataset, DAOQuery;
 
 type
   TDataModule2 = class(TDataModule)
@@ -27,6 +29,6 @@ implementation
 
 
 
-{$R *.DFM}
+{$R *.lfm}
 
 end.

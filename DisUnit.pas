@@ -1,8 +1,10 @@
 unit DisUnit;
 
+{$MODE Delphi}
+
 interface
 
-uses classes,math,StdCtrls,initial,trendintvunit,OutvarUnit;
+uses classes,math,StdCtrls,INITIAL,trendintvunit,OutvarUnit;
 
 Type
   Tgenentity=class
@@ -305,7 +307,7 @@ implementation
 
 {--------------------------------------------------------------------}
 
-uses sysutils,prevmain,dataset,disoptions,datmod1,memomes,calcunit,dialogs;
+uses sysutils,PREVMAIN,DATASET,Disoptions,datmod1,memomes,CalcUnit,dialogs;
 
 {---------------------------------------------------------------------}
 procedure Tgenentity.dojaarstap(tt:integer);

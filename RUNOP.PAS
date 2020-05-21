@@ -1,9 +1,11 @@
-unit Runop;
+unit RUNOP;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, Spin;
 
 type
@@ -47,10 +49,10 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,initial,disunit,winglob,runspec, kies,rfoptions,
-  Disoptions,popoptions,predefintunit, Dataset, datmod1,trendintvunit,math;
+uses GESCALE,INITIAL,DisUnit,WINGLOB,RUNSPEC, kies,rfoptions,
+  Disoptions,Popoptions,PredefintUnit, DATASET, datmod1,trendintvunit,math;
 
 procedure Trunopform.setrunops;
 

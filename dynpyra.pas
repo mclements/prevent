@@ -1,11 +1,13 @@
 unit dynpyra;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   dynchart, ComCtrls, StdCtrls, ExtCtrls, TeEngine, Series, TeeProcs, Chart,
-  initial;
+  INITIAL, TAGraph;
 
 type
   Tdynpyramid = class(Tdyngraf)
@@ -34,8 +36,8 @@ var
 
 implementation
 
-{$R *.DFM}
-uses gescale,winglob,outop;
+{$R *.lfm}
+uses GESCALE,WINGLOB,OUTOP;
 
 
 procedure Tdynpyramid.doen(ymin,ymax:double;uitnaam,ls1,ls2,ls3,ls4:string);

@@ -1,9 +1,11 @@
 
-Unit bevolun;
+Unit BEVOLUN;
+
+{$MODE Delphi}
 
 Interface
 
-uses sysutils,forms,classes,StdCtrls,initial,trendintvunit,OutvarUnit;
+uses sysutils,forms,classes,StdCtrls,INITIAL,trendintvunit,OutvarUnit;
 
 const
   birthlow=10;
@@ -52,8 +54,8 @@ var
 Implementation
 
 Uses
-  winglob,
-  startun,dataset, prevmain,disunit,dynpyra,popoptions,datmod1;
+  WINGLOB,
+  STARTUN,DATASET, PREVMAIN,DisUnit,dynpyra,Popoptions,datmod1;
 
 
 constructor Tpopulation.create;

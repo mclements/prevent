@@ -1,10 +1,12 @@
 unit rfoptions;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls,disunit, ComCtrls;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls,DisUnit, ComCtrls;
 
 type
   TRFOpForm = class(TForm)
@@ -29,8 +31,8 @@ var
 
 implementation
 
-{$R *.DFM}
-uses gescale,winglob,initial;
+{$R *.lfm}
+uses GESCALE,WINGLOB,INITIAL;
 
 procedure TRFOpForm.FormCreate(Sender: TObject);
 begin

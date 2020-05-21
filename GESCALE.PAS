@@ -1,4 +1,6 @@
-unit geScale;
+unit GESCALE;
+
+{$MODE Delphi}
 
 {This will rescale both the form size and also reform small vs. large fonts.
 Call it in Form.FormCreate.}
@@ -10,7 +12,7 @@ procedure geAutoScale(MForm: TForm);
 
 implementation
 
-uses winglob;
+uses WINGLOB;
 
 Type
 
