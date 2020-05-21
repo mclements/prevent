@@ -1,0 +1,105 @@
+object FkiesForm: TFkiesForm
+  Left = 281
+  Top = 135
+  Width = 439
+  Height = 336
+  Caption = 'FkiesForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object DirectoryListBox1: TDirectoryListBox
+    Left = 40
+    Top = 40
+    Width = 145
+    Height = 129
+    ItemHeight = 16
+    TabOrder = 0
+    OnChange = DirectoryListBox1Change
+  end
+  object DriveComboBox1: TDriveComboBox
+    Left = 40
+    Top = 8
+    Width = 353
+    Height = 19
+    TabOrder = 1
+    OnChange = DriveComboBox1Change
+  end
+  object FileListBox1: TFileListBox
+    Left = 224
+    Top = 40
+    Width = 169
+    Height = 97
+    ItemHeight = 13
+    Mask = '*.csv'
+    TabOrder = 2
+    OnChange = FileListBox1Change
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 268
+    Width = 431
+    Height = 41
+    Align = alBottom
+    TabOrder = 3
+    object OKBut: TButton
+      Left = 326
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = OKButClick
+    end
+    object EscBut: TButton
+      Left = 222
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = EscButClick
+    end
+  end
+  object FilterComboBox1: TFilterComboBox
+    Left = 224
+    Top = 152
+    Width = 169
+    Height = 21
+    Filter = 'Comma delimited (*.csv)|*.csv'
+    TabOrder = 4
+  end
+  object AppendGroup: TRadioGroup
+    Left = 40
+    Top = 184
+    Width = 145
+    Height = 65
+    Caption = 'Existing file:'
+    ItemIndex = 0
+    Items.Strings = (
+      'overwrite'
+      'append'
+    )
+    TabOrder = 5
+  end
+  object FileGroup: TGroupBox
+    Left = 216
+    Top = 184
+    Width = 185
+    Height = 65
+    Caption = 'File name'
+    TabOrder = 6
+    object Edit1: TEdit
+      Left = 6
+      Top = 14
+      Width = 169
+      Height = 21
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+  end
+end

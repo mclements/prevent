@@ -1,0 +1,106 @@
+object graphuit1: Tgraphuit1
+  Left = 279
+  Top = 155
+  Width = 444
+  Height = 376
+  Caption = 'graphuit1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Chart1: TChart
+    Left = 0
+    Top = 0
+    Width = 436
+    Height = 308
+    Foot.Font.Charset = DEFAULT_CHARSET
+    Foot.Font.Color = clRed
+    Foot.Font.Height = -12
+    Foot.Font.Name = 'Arial'
+    Foot.Font.Style = [fsItalic]
+    Title.Text.Strings = (
+      'TChart Component'
+    )
+    BackColor = clWhite
+    BottomAxis.Grid.Color = clScrollBar
+    BottomAxis.Grid.Visible = False
+    LeftAxis.Grid.Color = clScrollBar
+    Align = alClient
+    object LineSeries1: TLineSeries
+      Marks.Arrow.Visible = False
+      Marks.Frame.Visible = False
+      Marks.Style = smsLegend
+      Marks.Visible = False
+      SeriesColor = 50176
+      LinePen.Color = clLime
+      LinePen.Width = 3
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 176
+      Top = 104
+    end
+    object LineSeries2: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clLime
+      LinePen.Style = psDot
+      LinePen.Width = 2
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 184
+      Top = 152
+    end
+    object LineSeries3: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clBlue
+      LinePen.Width = 3
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 88
+      Top = 168
+    end
+    object LineSeries4: TLineSeries
+      Marks.Visible = False
+      SeriesColor = clAqua
+      LinePen.Style = psDot
+      LinePen.Width = 2
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      Left = 168
+      Top = 208
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 308
+    Width = 436
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object CloseBut: TButton
+      Left = 318
+      Top = 6
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Close'
+      TabOrder = 0
+      OnClick = CloseButClick
+    end
+    object printBut: TButton
+      Left = 214
+      Top = 6
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Print'
+      TabOrder = 1
+      OnClick = printButClick
+    end
+  end
+end

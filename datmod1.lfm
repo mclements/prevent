@@ -1,0 +1,44 @@
+object DataModule2: TDataModule2
+  OldCreateOrder = False
+  Left = 426
+  Top = 307
+  Height = 265
+  Width = 392
+  object DataSource1: TDataSource
+    DataSet = InputQ1
+    Left = 64
+    Top = 96
+  end
+  object Preventinput: TDAODatabase
+    ReadOnly = True
+    Version = '1.99'
+    Left = 64
+    Top = 40
+  end
+  object InputQ1: TDAOQuery
+    Database = Preventinput
+    Parameters = []
+    OpenType = db_OpenDynaset
+    Left = 120
+    Top = 40
+  end
+  object InputQ2: TDAOQuery
+    Database = Preventinput
+    Parameters = []
+    OpenType = db_OpenDynaset
+    Left = 128
+    Top = 96
+  end
+  object Preventoutput: TDAODatabase
+    Version = '1.99'
+    Left = 216
+    Top = 48
+  end
+  object outputQ1: TDAOQuery
+    Database = Preventoutput
+    Parameters = []
+    OpenType = db_OpenDynaset
+    Left = 288
+    Top = 64
+  end
+end

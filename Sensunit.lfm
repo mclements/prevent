@@ -1,0 +1,54 @@
+object SensForm: TSensForm
+  Left = 335
+  Top = 178
+  BorderStyle = bsDialog
+  Caption = 'SensForm'
+  ClientHeight = 201
+  ClientWidth = 305
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnActivate = FormActivate
+  OnClose = FormClose
+  PixelsPerInch = 96
+  object CheckListBox1: TCheckListBox
+    Left = 0
+    Top = 0
+    Width = 305
+    Height = 160
+    Align = alClient
+    ItemHeight = 13
+    TabOrder = 0
+    OnClick = CheckListBox1Click
+  end
+  object BotPanel: TPanel
+    Left = 0
+    Top = 160
+    Width = 305
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object StartBut: TButton
+      Left = 206
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Start'
+      TabOrder = 0
+      OnClick = StartButClick
+    end
+    object CancBut: TButton
+      Left = 118
+      Top = 6
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = CancButClick
+    end
+  end
+end

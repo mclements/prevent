@@ -1,0 +1,72 @@
+object PredefintForm: TPredefintForm
+  Left = 192
+  Top = 126
+  BorderIcons = [biMinimize, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'PredefintForm'
+  ClientHeight = 296
+  ClientWidth = 508
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  PixelsPerInch = 96
+  object PredefCheckList: TCheckListBox
+    Left = 0
+    Top = 41
+    Width = 508
+    Height = 214
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ItemHeight = 16
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BotPanel: TPanel
+    Left = 0
+    Top = 255
+    Width = 508
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object DoneBut: TButton
+      Left = 414
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = DoneButClick
+    end
+    object CancelBut: TButton
+      Left = 318
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Cancel'
+      TabOrder = 1
+      OnClick = CancelButClick
+    end
+  end
+  object TopPanel: TPanel
+    Left = 0
+    Top = 0
+    Width = 508
+    Height = 41
+    Align = alTop
+    Caption = 'Check one pre-defined interventions and click "Done"'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+end

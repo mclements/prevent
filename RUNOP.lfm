@@ -1,0 +1,160 @@
+object runopform: Trunopform
+  Left = 269
+  Top = 133
+  HelpContext = 43
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Prevent run specification'
+  ClientHeight = 271
+  ClientWidth = 387
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 230
+    Width = 387
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object closebut: TButton
+      Left = 286
+      Top = 6
+      Width = 89
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = closebutClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 387
+    Height = 176
+    Align = alClient
+    TabOrder = 1
+    object chainGroup: TRadioGroup
+      Left = 198
+      Top = 6
+      Width = 169
+      Height = 57
+      Caption = 'Risk factors included'
+      ItemIndex = 0
+      Items.Strings = (
+        'All'
+        'Selected'
+      )
+      TabOrder = 0
+      OnClick = chainGroupClick
+    end
+    object disGroup: TRadioGroup
+      Left = 14
+      Top = 6
+      Width = 169
+      Height = 81
+      Caption = 'Diseases included'
+      ItemIndex = 0
+      Items.Strings = (
+        'All'
+        'Risk factor related'
+        'Selected'
+      )
+      TabOrder = 1
+      OnClick = disGroupClick
+    end
+    object rfchoicebut: TButton
+      Left = 198
+      Top = 78
+      Width = 169
+      Height = 25
+      Caption = 'Choose risk factors'
+      TabOrder = 2
+      OnClick = rfchoicebutClick
+    end
+    object IntervBut: TButton
+      Left = 198
+      Top = 110
+      Width = 169
+      Height = 25
+      Caption = 'Risk factor interventions'
+      TabOrder = 3
+      OnClick = IntervButClick
+    end
+    object DisBut: TButton
+      Left = 14
+      Top = 110
+      Width = 169
+      Height = 25
+      Caption = 'Choose diseases'
+      TabOrder = 4
+      OnClick = DisButClick
+    end
+    object rfopBut: TButton
+      Left = 198
+      Top = 142
+      Width = 169
+      Height = 25
+      Caption = 'Risk factor options'
+      TabOrder = 5
+      OnClick = rfopButClick
+    end
+    object DisopBut: TButton
+      Left = 14
+      Top = 142
+      Width = 169
+      Height = 25
+      Caption = 'Disease options'
+      TabOrder = 6
+      OnClick = DisopButClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 176
+    Width = 387
+    Height = 54
+    Align = alBottom
+    TabOrder = 2
+    object lengthLabel: TLabel
+      Left = 22
+      Top = 6
+      Width = 39
+      Height = 16
+      Caption = 'Length'
+    end
+    object GenopBut: TButton
+      Left = 198
+      Top = 14
+      Width = 169
+      Height = 25
+      Caption = 'Population options'
+      TabOrder = 0
+      OnClick = GenopButClick
+    end
+    object Spinrun: TSpinEdit
+      Left = 126
+      Top = 13
+      Width = 49
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      MaxValue = 750
+      MinValue = 0
+      ParentFont = False
+      TabOrder = 1
+      Value = 25
+      OnChange = SpinrunChange
+    end
+  end
+end

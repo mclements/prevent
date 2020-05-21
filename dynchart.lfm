@@ -1,0 +1,99 @@
+object dyngraf: Tdyngraf
+  Left = 250
+  Top = 167
+  Width = 508
+  Height = 386
+  Caption = 'Dynamic chart'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = closebutplaats
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 318
+    Width = 500
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object CloseBut: TButton
+      Left = 350
+      Top = 6
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Close'
+      TabOrder = 0
+      OnClick = CloseButClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 448
+    Top = 0
+    Width = 52
+    Height = 318
+    Align = alRight
+    TabOrder = 1
+    object Jaarlab: TLabel
+      Left = 0
+      Top = 257
+      Width = 50
+      Height = 17
+      Align = alBottom
+      Alignment = taCenter
+      Caption = 'Jaarlab'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Panel3: TPanel
+      Left = 0
+      Top = 274
+      Width = 50
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 0
+      object ReplayBut: TButton
+        Left = 6
+        Top = 6
+        Width = 36
+        Height = 25
+        Caption = '&Run'
+        TabOrder = 0
+        OnClick = ReplayButClick
+      end
+    end
+    object TrackBar1: TTrackBar
+      Left = 6
+      Top = 6
+      Width = 41
+      Height = 233
+      Orientation = trVertical
+      PageSize = 1
+      Frequency = 1
+      Position = 0
+      SelEnd = 0
+      SelStart = 0
+      TabOrder = 1
+      TickMarks = tmBoth
+      TickStyle = tsAuto
+      OnChange = TrackBar1Change
+    end
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 144
+    Top = 326
+  end
+end

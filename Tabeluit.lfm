@@ -1,0 +1,89 @@
+object tableuitform: Ttableuitform
+  Left = 361
+  Top = 183
+  Width = 435
+  Height = 376
+  Caption = 'Prevent - tabled output'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnClose = wclose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 427
+    Height = 41
+    Align = alTop
+    Caption = 'Panel1'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 308
+    Width = 427
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object closebut: TButton
+      Left = 318
+      Top = 6
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Close'
+      TabOrder = 0
+      OnClick = closebutClick
+    end
+  end
+  object HyperGrid1: THyperGrid
+    Left = 0
+    Top = 41
+    Width = 427
+    Height = 267
+    Align = alClient
+    DefaultRowHeight = 20
+    DefaultDrawing = False
+    FixedRows = 2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnKeyDown = HyperGrid1KeyDown
+    Columns = <    
+      item
+        Name = 'Column 1'
+      end    
+      item
+        Name = 'Column 2'
+      end    
+      item
+        Name = 'Column 3'
+      end    
+      item
+        Name = 'Column 4'
+      end    
+      item
+        Name = 'Column 5'
+      end>
+    Headings = <>
+    HyperOptions = [hgoptDrawFocusRectangle, hgoptHighlightSelection]
+    AVisibleColumnCount = 5
+    RowHeights = (
+      44
+      20
+      20
+      20
+      20
+    )
+  end
+end

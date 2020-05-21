@@ -1,0 +1,32 @@
+inherited dynbarren: Tdynbarren
+  Caption = 'dynbarren'
+  PixelsPerInch = 96
+  object Chart1: TChart[2]
+    Left = 0
+    Top = 0
+    Width = 448
+    Height = 318
+    Title.Font.Charset = DEFAULT_CHARSET
+    Title.Font.Color = clBlue
+    Title.Font.Height = -15
+    Title.Font.Name = 'Arial'
+    Title.Font.Style = []
+    Title.Text.Strings = (
+      'TChart'
+    )
+    BackColor = clWhite
+    BottomAxis.Grid.Visible = False
+    Legend.Alignment = laBottom
+    Align = alClient
+    object ManSeries: TBarSeries
+      Marks.Visible = False
+      SeriesColor = clGreen
+      BarWidthPercent = 95
+    end
+    object VroSeries: TBarSeries
+      Marks.Visible = False
+      SeriesColor = clNavy
+      BarWidthPercent = 95
+    end
+  end
+end

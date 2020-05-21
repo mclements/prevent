@@ -1,0 +1,152 @@
+object ParaselForm: TParaselForm
+  Left = 291
+  Top = 120
+  Width = 428
+  Height = 337
+  Caption = 'ParaselForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  PixelsPerInch = 96
+  object BotPanel: TPanel
+    Left = 0
+    Top = 269
+    Width = 420
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    object CloseBut: TButton
+      Left = 318
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = '&Done'
+      TabOrder = 0
+      OnClick = CloseButClick
+    end
+  end
+  object RiskfacGroup: TGroupBox
+    Left = 24
+    Top = 16
+    Width = 185
+    Height = 121
+    Caption = 'Risk factor variables'
+    TabOrder = 1
+    object AgeCheck: TCheckBox
+      Left = 14
+      Top = 2
+      Width = 113
+      Height = 17
+      Caption = 'Age effect'
+      TabOrder = 0
+    end
+    object PeriodCheck: TCheckBox
+      Left = 14
+      Top = 18
+      Width = 113
+      Height = 17
+      Caption = 'Period effect'
+      TabOrder = 1
+    end
+    object ColevelCheck: TCheckBox
+      Left = 14
+      Top = 34
+      Width = 113
+      Height = 17
+      Caption = 'Cohort level'
+      TabOrder = 2
+    end
+    object PrevlevelCheck: TCheckBox
+      Left = 14
+      Top = 66
+      Width = 145
+      Height = 17
+      Caption = 'Prevalence level'
+      Enabled = False
+      TabOrder = 3
+    end
+    object CodistCheck: TCheckBox
+      Left = 14
+      Top = 50
+      Width = 129
+      Height = 17
+      Caption = 'Cohort distribution'
+      TabOrder = 4
+    end
+    object PrevdistCheck: TCheckBox
+      Left = 14
+      Top = 82
+      Width = 145
+      Height = 17
+      Caption = 'Prevalence distribution'
+      TabOrder = 5
+    end
+  end
+  object RFDisGroup: TGroupBox
+    Left = 24
+    Top = 144
+    Width = 185
+    Height = 105
+    Caption = 'Risk factor disease relations'
+    TabOrder = 2
+    object RRCheck: TCheckBox
+      Left = 14
+      Top = 2
+      Width = 97
+      Height = 17
+      Caption = 'Relative risks'
+      TabOrder = 0
+    end
+    object RemRRCheck: TCheckBox
+      Left = 14
+      Top = 18
+      Width = 121
+      Height = 17
+      Caption = 'Remnant relative risks'
+      TabOrder = 1
+    end
+    object CUMCheck: TCheckBox
+      Left = 14
+      Top = 34
+      Width = 121
+      Height = 17
+      Caption = 'CUM'
+      TabOrder = 2
+    end
+    object LATCheck: TCheckBox
+      Left = 14
+      Top = 50
+      Width = 121
+      Height = 17
+      Caption = 'LAT'
+      TabOrder = 3
+    end
+    object LAGCheck: TCheckBox
+      Left = 14
+      Top = 66
+      Width = 121
+      Height = 17
+      Caption = 'LAG'
+      TabOrder = 4
+    end
+  end
+  object DisGroup: TGroupBox
+    Left = 224
+    Top = 16
+    Width = 169
+    Height = 105
+    Caption = 'Diseases'
+    TabOrder = 3
+  end
+  object PopGroup: TGroupBox
+    Left = 224
+    Top = 144
+    Width = 169
+    Height = 105
+    Caption = 'Population'
+    TabOrder = 4
+  end
+end
