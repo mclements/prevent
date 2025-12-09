@@ -210,8 +210,9 @@
       <Unit22>
         <Filename Value="BEVOLUN.PAS"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="132"/>
-        <CursorPos Y="161"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="177"/>
+        <CursorPos X="10" Y="193"/>
         <UsageCount Value="220"/>
         <Loaded Value="True"/>
       </Unit22>
@@ -439,7 +440,7 @@
         <EditorIndex Value="13"/>
         <TopLine Value="5417"/>
         <CursorPos Y="5431"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit50>
       <Unit51>
@@ -459,7 +460,6 @@
       </Unit52>
       <Unit53>
         <Filename Value="/usr/lib/lazarus/3.0/lcl/interfaces/gtk2/gtk2widgetset.inc"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="17"/>
         <TopLine Value="2560"/>
         <CursorPos X="43" Y="2583"/>
@@ -503,124 +503,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="336" TopLine="299"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="181" TopLine="145"/>
       </Position1>
       <Position2>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="337" TopLine="300"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="182" TopLine="145"/>
       </Position2>
       <Position3>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="338" TopLine="302"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="181" TopLine="145"/>
       </Position3>
       <Position4>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="340" TopLine="304"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="185" Column="4" TopLine="145"/>
       </Position4>
       <Position5>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="341" TopLine="305"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="186" TopLine="159"/>
       </Position5>
       <Position6>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="315" Column="25" TopLine="307"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="188" TopLine="159"/>
       </Position6>
       <Position7>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="236" Column="32" TopLine="207"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="190" TopLine="159"/>
       </Position7>
       <Position8>
-        <Filename Value="DATASET.PAS"/>
-        <Caret Line="310" Column="13" TopLine="287"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="189" TopLine="159"/>
       </Position8>
       <Position9>
-        <Filename Value="DisUnit.pas"/>
-        <Caret Line="1564" Column="10" TopLine="1543"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="190" TopLine="159"/>
       </Position9>
       <Position10>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="153" Column="19" TopLine="140"/>
+        <Caret Line="189" TopLine="159"/>
       </Position10>
       <Position11>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="155" TopLine="132"/>
+        <Caret Line="191" TopLine="159"/>
       </Position11>
       <Position12>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="157" TopLine="132"/>
+        <Caret Line="192" TopLine="159"/>
       </Position12>
       <Position13>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="156" TopLine="132"/>
+        <Caret Line="193" TopLine="159"/>
       </Position13>
       <Position14>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="157" TopLine="132"/>
+        <Caret Line="194" TopLine="159"/>
       </Position14>
       <Position15>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="156" TopLine="132"/>
+        <Caret Line="193" TopLine="159"/>
       </Position15>
       <Position16>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="158" TopLine="132"/>
+        <Caret Line="194" TopLine="159"/>
       </Position16>
       <Position17>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="159" TopLine="132"/>
+        <Caret Line="193" TopLine="159"/>
       </Position17>
       <Position18>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="160" TopLine="132"/>
+        <Caret Line="194" TopLine="159"/>
       </Position18>
       <Position19>
         <Filename Value="BEVOLUN.PAS"/>
-        <Caret Line="161" TopLine="132"/>
+        <Caret Line="193" TopLine="159"/>
       </Position19>
       <Position20>
-        <Filename Value="PREVMAIN.PAS"/>
-        <Caret Line="289" TopLine="255"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position20>
       <Position21>
-        <Filename Value="PREVMAIN.PAS"/>
-        <Caret Line="372" TopLine="350"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="193" TopLine="159"/>
       </Position21>
       <Position22>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/control.inc"/>
-        <Caret Line="2976" TopLine="2954"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position22>
       <Position23>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/buttoncontrol.inc"/>
-        <Caret Line="56" TopLine="33"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="193" TopLine="159"/>
       </Position23>
       <Position24>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/buttons.inc"/>
-        <Caret Line="170" TopLine="147"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position24>
       <Position25>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/buttoncontrol.inc"/>
-        <Caret Line="22"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="193" TopLine="159"/>
       </Position25>
       <Position26>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/wincontrol.inc"/>
-        <Caret Line="5430" TopLine="5417"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position26>
       <Position27>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/include/wincontrol.inc"/>
-        <Caret Line="5431" TopLine="5417"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="193" TopLine="159"/>
       </Position27>
       <Position28>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/lclmessageglue.pas"/>
-        <Caret Line="114" TopLine="92"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position28>
       <Position29>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/interfaces/gtk2/gtk2proc.inc"/>
-        <Caret Line="3776" TopLine="3753"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="193" TopLine="159"/>
       </Position29>
       <Position30>
-        <Filename Value="/usr/lib/lazarus/3.0/lcl/interfaces/gtk2/gtk2wsstdctrls.pp"/>
-        <Caret Line="2472" TopLine="2449"/>
+        <Filename Value="BEVOLUN.PAS"/>
+        <Caret Line="194" TopLine="159"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -628,15 +628,4 @@
       <Modes ActiveMode="default"/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="BEVOLUN.PAS"/>
-        <Line Value="155"/>
-      </Item>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>
