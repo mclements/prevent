@@ -5,9 +5,9 @@ unit Grafuit1;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Chart, Series, ExtCtrls, StdCtrls, TAGraph, TASeries,
-  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}INITIAL;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, StdCtrls, TAGraph, TASeries,
+  {TeEngine,TeeProcs,Teeprevi}{editpro,editchar,}INITIAL;
 
 type
   Tgraphuit1 = class(TForm)
@@ -38,15 +38,15 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,WINGLOB, OUTOP,math;
+uses GESCALE,{WINGLOB,} OUTOP,math;
 
 procedure Tgraphuit1.doen(uitnaam,ls1,ls2,ls3,ls4:string);
 begin
   caption:='Prevent - '+currentdataset+' output';
-  Chart1.ZoomPercent(98);
+  {Chart1.ZoomPercent(98);}
   chart1.Title.text[0]:=uitnaam;
   if outopform.y0check.State=cbchecked then
-      chart1.leftaxis.minimum:=min(0.0,chart1.leftaxis.minimum);
+      chart1.leftaxis.Range.Min:=min(0.0,chart1.leftaxis.Range.Min);
   LineSeries1.Title:=ls1;
   LineSeries2.Title:=ls2;
   LineSeries3.Title:=ls3;
@@ -87,7 +87,7 @@ end;
 
 procedure Tgraphuit1.printButClick(Sender: TObject);
 begin
-  chartpreview(self,chart1);
+  {chartpreview(self,chart1);}
 end;
 
 end.

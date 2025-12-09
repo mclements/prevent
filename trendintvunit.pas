@@ -182,8 +182,10 @@ begin
         varelrij[num]^.mfwaarde[0,fem]:=fieldbyname('Females').asfloat;
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 procedure Tcatmvardata.leesvarelscat(selectstring:string;cn:integer);
@@ -216,8 +218,10 @@ begin
         varelrij[num]^.mfwaarde[cn,fem]:=fieldbyname('Females').asfloat;
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 
@@ -279,8 +283,10 @@ begin
         varelrij[num]^.mfwaarde[0,fem]:=fieldbyname('Females').asfloat;
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 
@@ -312,14 +318,16 @@ begin
         varelrij[num]^.mfwaarde[cn,fem]:=fieldbyname('Females').asfloat;
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 
 procedure Tcatcohortmvardata.maakjaar(tt:integer);
 var
-  num,ag,dd,cn:integer;
+  num,cn:integer;
   sex:Tsex;
 begin
   for num:=0 to length(varelrij)-1 do
@@ -384,7 +392,9 @@ begin
         end;
         Next;
       end;
+      close;
     end;
+    datamodule2.SQLTransaction1.Commit;
   end;{with}
 end;
 
@@ -456,8 +466,10 @@ begin
         varelrij[num]^.mfwaarde[fem]:=fieldbyname('Females').asfloat;
         Next;
       end;
+      Close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 procedure Tmvardata.maakjaar(tt:integer);
@@ -537,13 +549,15 @@ begin
         if tt=varelrij[num]^.jaar then inc(agnum);
         Next;
       end;
+      close;
     end;
+    datamodule2.SQLTransaction1.Commit;
   end;{with}
 end;
 
 procedure Tmvarddist.zetoneydata;
 var
-  num,pnum,ag:integer;
+  ag:integer;
   sex:Tsex;
 begin
   for sex:=men to fem do
@@ -622,8 +636,10 @@ begin
         if tt=varelrij[num]^.jaar then inc(agnum);
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 

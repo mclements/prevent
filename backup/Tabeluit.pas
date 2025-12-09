@@ -1,17 +1,20 @@
 unit Tabeluit;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,initial, HgHGrid, HgGrid;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,INITIAL {,HgHGrid, HgGrid};
 
 type
   Ttableuitform = class(TForm)
     Panel1: TPanel;
     Panel2: TPanel;
     closebut: TButton;
-    HyperGrid1: THyperGrid;
+    {HyperGrid1: THyperGrid;}
+    HyperGrid1: TStringGrid;
     procedure closebutClick(Sender: TObject);
     procedure wclose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -21,7 +24,8 @@ type
     { Private declarations }
   public
     { Public declarations }
-    procedure copy2clbrd(copygrid:THyperGrid);
+    {procedure copy2clbrd(copygrid:THyperGrid);}
+    procedure copy2clbrd(copygrid:TStringGrid);
     procedure dicht;
     procedure opzet(nr,nrcol,nrrow,nrhead:integer);
     procedure doen(uitnaam:string);
@@ -34,9 +38,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,winglob, Prevmain,Clipbrd;
+uses GESCALE,{WINGLOB,} PREVMAIN,Clipbrd;
 
 const col0=70;
       colmid=75;
@@ -49,23 +53,24 @@ procedure Ttableuitform.opzet(nr,nrcol,nrrow,nrhead:integer);
 
 var
     nrind:integer;
+    c:TGridColumn;
 
 begin
   with Hypergrid1 do
   begin
     columns.clear;
-    headings.clear;
-    for nrind:=0 to nrhead do headings.add;
+    {headings.clear;}
+    {for nrind:=0 to nrhead do headings.add;}
     rowcount:=nrrow+3;
     colcount:=nrcol+2;
     for nrind:=0 to colcount-1 do columns.add;
-    columns[0].headingindex:=0;
+    columns[0].Index:=0;
     colwidths[0]:=col0;
     formwijd:=colwidths[0];
     for nrind:=1 to nrcol do
     begin
-      columns[nrind].headingindex:=round(int(1+(nrind-1)/(nrcol/nrhead)));
-      columns[nrind].columnhalignment:=taRightJustify;
+      columns[nrind].index:=round(int(1+(nrind-1)/(nrcol/nrhead)));
+      columns[nrind].Alignment:=taRightJustify;
       colwidths[nrind]:=colmid;
       formwijd:=formwijd+colwidths[nrind];
     end;
@@ -109,7 +114,7 @@ begin
   tablelist.add(self);
 end;
 
-procedure Ttableuitform.copy2clbrd(copygrid:THyperGrid);
+procedure Ttableuitform.copy2clbrd(copygrid:TStringGrid);
 
 var tmp:string;
     row,col:integer;

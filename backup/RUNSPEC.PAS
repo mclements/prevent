@@ -1,10 +1,12 @@
-unit Runspec;
+unit RUNSPEC;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, StdCtrls, Spin, Grids, CheckLst;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, StdCtrls, {Spin,} Grids, CheckLst;
 
 type
   TrunForm = class(TForm)
@@ -36,9 +38,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,winglob, initial, disunit, prevmain, bevolun;
+uses GESCALE,WINGLOB, INITIAL, DisUnit, PREVMAIN{, BEVOLUN};
 
 procedure TrunForm.datsetlabelset;
 begin

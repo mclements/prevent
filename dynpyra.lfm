@@ -41,66 +41,33 @@ inherited dynpyramid: Tdynpyramid
       BottomAxis.Inverted = True
       Legend.Visible = False
       Align = alLeft
-      object Mshared: THorizBarSeries
-        Marks.ArrowLength = 20
+      object Mshared: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Un changed'
-        VertAxis = aRightAxis
         BarPen.Width = 2
         BarWidthPercent = 100
-        MultiBar = mbStacked
-        SideMargins = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
-      object Mloss: THorizBarSeries
-        Marks.ArrowLength = 20
+      object Mloss: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Loss'
-        VertAxis = aRightAxis
         BarBrush.Color = clYellow
         BarBrush.Style = bsHorizontal
         BarPen.Width = 2
         BarWidthPercent = 100
-        MultiBar = mbStacked
-        SideMargins = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
-      object Mgain: THorizBarSeries
-        Marks.ArrowLength = 20
+      object Mgain: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Gain'
-        VertAxis = aRightAxis
         BarBrush.Color = clLime
         BarBrush.Style = bsHorizontal
         BarPen.Width = 2
         BarWidthPercent = 100
-        MultiBar = mbStacked
-        SideMargins = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
     end
     object WomenChart: TChart
@@ -113,27 +80,16 @@ inherited dynpyramid: Tdynpyramid
       )
       BackColor = clWhite
       Align = alRight
-      object Wshared: THorizBarSeries
-        Marks.ArrowLength = 20
-        Marks.BackColor = clWhite
+      object Wshared: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Unchanged'
         BarPen.Width = 2
         BarWidthPercent = 100
-        MultiBar = mbStacked
-        SideMargins = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
-      object Wloss: THorizBarSeries
-        Marks.ArrowLength = 20
+      object Wloss: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Loss'
@@ -141,39 +97,16 @@ inherited dynpyramid: Tdynpyramid
         BarBrush.Style = bsHorizontal
         BarPen.Width = 2
         BarWidthPercent = 100
-        MultiBar = mbStacked
-        SideMargins = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
-      object Wgain: THorizBarSeries
-        Marks.ArrowLength = 20
+      object Wgain: TBarSeries
+        Marks.Distance = 20
         Marks.Visible = False
         SeriesColor = clRed
         Title = 'Gain'
-        AutoMarkPosition = False
         BarBrush.Color = clLime
         BarBrush.Style = bsHorizontal
         BarPen.Width = 2
         BarWidthPercent = 100
-        Dark3D = False
-        MultiBar = mbStacked
-        SideMargins = False
-        UseYOrigin = False
-        XValues.DateTime = False
-        XValues.Name = 'Bar'
-        XValues.Multiplier = 1
-        XValues.Order = loNone
-        YValues.DateTime = False
-        YValues.Name = 'Y'
-        YValues.Multiplier = 1
-        YValues.Order = loNone
       end
     end
   end

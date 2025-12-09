@@ -1,10 +1,12 @@
 unit Sensunit;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, CheckLst, Grids, DBGrids,initial;
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, CheckLst, {Grids,} DBGrids,INITIAL;
 
 type
   TSensForm = class(TForm)
@@ -145,10 +147,10 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses math,winglob, datmod1, runop, parasel, permusens,prevmain,disunit,
-  memomes, Aboutun, Fkies, Outop, Dataset;
+uses math,WINGLOB, datmod1, RUNOP, parasel, Permusens,PREVMAIN,DisUnit,
+  memomes, {ABOUTUN,} Fkies, OUTOP, DATASET;
 
 var sensinstance:Tsensinstance;
     testuit:Text;
@@ -357,10 +359,10 @@ end;
 
 constructor TRRsens.Create(n:string);
 
-var inr1,inr2,catinr:integer;
+var inr1,inr2{,catinr}:integer;
     RRsensdisease:TRFsensdisease;
     RRsensrfdis:TRRsensrfdis;
-    expocat:Texpocat;
+    {expocat:Texpocat;}
 
 begin                                    {bevat o.a. een datastructuur voor de uitgangswaarden}
   inherited Create(n);
@@ -384,7 +386,7 @@ end;
 
 destructor TRRsens.destroy;
 
-var inr1,inr2:integer;
+var inr1{,inr2}:integer;
 
 begin
   for inr1:=0 to sensdislist.Count-1 do
@@ -396,7 +398,7 @@ end;
 
 procedure TRRsens.getorig;
 
-var inr1,inr2,inr3,catinr,cc,ag:integer;
+var inr1,inr2,inr3,{catinr,}cc,ag:integer;
     sex:Tsex;
 
 begin
@@ -430,7 +432,9 @@ begin
               Texpocat(StdDev.Items[inr2]).prevs[sex,ag]:=Fields[cc].Asfloat;
               Inc(cc);
             end;
+           close;
          end;
+         datamodule2.SQLTransaction1.Commit;
       end;
   end;{if uncertbool}
 end;
@@ -438,7 +442,7 @@ end;
 
 procedure TRRsens.aanpas(nummer:double);
 
-var ag,inr1,inr2,catinr:integer;
+var ag,inr1,inr2:integer;
     sex:Tsex;
     gamma,afstand,beta:Double;
     eerste:Boolean;
@@ -462,9 +466,9 @@ begin
                (SRelRis[sex,ag]-1.0)*nummer;
          end else
          begin
-           if Texpocat(StdDev.Items[catinr]).prevs[sex,ag]>0.0 then
+           if Texpocat(StdDev.Items[inr2]).prevs[sex,ag]>0.0 then
            begin
-             beta:=power(Texpocat(StdDev.Items[catinr]).prevs[sex,ag],2)
+             beta:=power(Texpocat(StdDev.Items[inr2]).prevs[sex,ag],2)
                 /(SRelRis[sex,ag]-1.0);
              gamma:=sensform.gamma_exp(0,(SRelRis[sex,ag]-1.0)/beta,beta);
              if eerste then
@@ -558,7 +562,12 @@ begin
                +psq(TRFsensdisease(sensdislist.Items[inr1]).SName)+
               'and DiseaseRiskfactorRelation.RiskFactorName='+psq(rfac.Name));
       with datamodule2.inputQ1 do
-      with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+           begin
+                with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+                close;
+           end;
+        datamodule2.SQLTransaction1.Commit;
+      end;
     end;
   end;{for curdislist}
 end;
@@ -611,7 +620,11 @@ begin
                +psq(TRFsensdisease(sensdislist.Items[inr1]).SName)+
               'and DiseaseRiskfactorRelation.RiskFactorName='+psq(rfac.Name));
       with datamodule2.inputQ1 do
-      with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+      begin
+           with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+           close;
+      end;
+      datamodule2.SQLTransaction1.Commit;
     end;
   end;{for curdislist}
 end;
@@ -664,7 +677,11 @@ begin
                +psq(TRFsensdisease(sensdislist.Items[inr1]).SName)+
               'and DiseaseRiskfactorRelation.RiskFactorName='+psq(rfac.Name));
       with datamodule2.inputQ1 do
-      with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+      begin
+           with TLAGSsensrfdis(Srflist.Items[inr2]) do StdDev:=Fields[0].asfloat;
+           close;
+      end;
+      datamodule2.SQLTransaction1.Commit;
     end;
   end;{for curdislist}
 end;

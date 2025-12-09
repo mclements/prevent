@@ -5,7 +5,7 @@ unit Disoptions;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   DisUnit, StdCtrls, ExtCtrls;
 
 type
@@ -52,7 +52,7 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,WINGLOB,INITIAL, PredefintUnit, DATASET, datmod1;
+uses GESCALE, {WINGLOB,} INITIAL, PredefintUnit, DATASET, datmod1;
 
 
 procedure TDisopForm.OKButClick(Sender: TObject);
@@ -133,8 +133,10 @@ begin
         PredefintForm.predefchecklist.Items.Add(fields[0].asstring);
         next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
   if PredefintForm.predefchecklist.items.count=0 then
   begin
     MessageDlg(mes, mtError, [mbOK], 0);

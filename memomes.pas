@@ -5,7 +5,7 @@ unit memomes;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -32,7 +32,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,datmod1,DATASET;
+uses GESCALE, {datmod1,} DATASET;
 
 procedure TMemoForm.FormCreate(Sender: TObject);
 begin

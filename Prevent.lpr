@@ -7,7 +7,7 @@ To do: bug in total mortality & disability by age when pop projection is on
 *)
 uses
   LCLIntf, LCLType, LMessages,
-  Forms, Interfaces,
+  Forms, Interfaces, tachartlazaruspkg,
   Prevmain in 'PREVMAIN.PAS' {MainForm},
   Aboutun in 'ABOUTUN.PAS' {AboutBox},
   Dataset in 'DATASET.PAS' {datasetForm},
@@ -40,18 +40,15 @@ uses
   PredefintUnit in 'PredefintUnit.pas' {PredefintForm},
   trendintvunit in 'trendintvunit.pas',
   OutvarUnit in 'OutvarUnit.pas',
-  CalcUnit in 'CalcUnit.pas',
-  HTMLHelpViewer in 'HTMLHelpViewer.pas';
+  CalcUnit in 'CalcUnit.pas';
 
 {$R *.res}
-
 
 begin
   Aboutbox:=Taboutbox.Create(Application);
   aboutbox.Show;
   aboutbox.Update;
   Application.Title:='Prevent';
-  Application.HelpFile := 'prevent.chm';
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TDataModule2, DataModule2);
   Application.CreateForm(TdatasetForm, datasetForm);

@@ -1,8 +1,10 @@
-unit winglob;
+unit WINGLOB;
+
+{$MODE Delphi}
 
 interface
 
-uses initial;
+uses INITIAL;
 
 var
   uitbool:boolean;

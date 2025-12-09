@@ -1,7 +1,9 @@
 unit CalcUnit;
 
+{$MODE Delphi}
+
 interface
-uses disunit;
+uses DisUnit;
 Type
 
   Tnar=array of Double;
@@ -172,6 +174,7 @@ begin
   jvar:=1;
   har[1]:=1.0;
   klaar:=false;
+  ss:=0.0;
   while not klaar do
   begin
     trapzd(A, B,sar[jvar],jvar);

@@ -4,29 +4,23 @@ unit ABOUTUN;
 
 interface
 
-uses LCLIntf, LCLType, LMessages, Classes, Graphics, Forms, Controls, StdCtrls,
+uses LCLIntf, LCLType, {LMessages,} Classes, Graphics, Forms, Controls, StdCtrls,
   Buttons, ExtCtrls;
 
 type
   TAboutBox = class(TForm)
     Panel1: TPanel;
-    ProgramIcon: TImage;
     Version: TLabel;
     Copyright: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Image1: TImage;
-    Image2: TImage;
     Label1: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
-    procedure ProgramIconClick(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
     procedure VersionClick(Sender: TObject);
     procedure CopyrightClick(Sender: TObject);
     procedure Label3Click(Sender: TObject);
     procedure Label4Click(Sender: TObject);
-    procedure Image2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,16 +45,6 @@ begin
   aboutbox.close;
 end;
 
-procedure TAboutBox.ProgramIconClick(Sender: TObject);
-begin
-  aboutbox.close;
-end;
-
-procedure TAboutBox.Image1Click(Sender: TObject);
-begin
-  aboutbox.close;
-end;
-
 procedure TAboutBox.VersionClick(Sender: TObject);
 begin
   aboutbox.close;
@@ -77,11 +61,6 @@ begin
 end;
 
 procedure TAboutBox.Label4Click(Sender: TObject);
-begin
-  aboutbox.close;
-end;
-
-procedure TAboutBox.Image2Click(Sender: TObject);
 begin
   aboutbox.close;
 end;

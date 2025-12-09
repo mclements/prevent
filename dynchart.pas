@@ -5,9 +5,9 @@ unit dynchart;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Chart, Series, ExtCtrls, StdCtrls,
-  TeEngine, TeeProcs,Teeprevi,{editpro,editchar,}INITIAL, ComCtrls;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, tagraph, taSeries, ExtCtrls, StdCtrls,
+  {TeEngine, TeeProcs,Teeprevi,editpro,editchar,}INITIAL, ComCtrls;
 
 type
   Tdyngraf = class(TForm)
@@ -45,7 +45,7 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,WINGLOB,OUTOP,math;
+uses GESCALE,{WINGLOB,}OUTOP{,math};
 
 
 procedure Tdyngraf.doen(ymin,ymax:double;uitnaam,ls1,ls2,ls3,ls4:string);

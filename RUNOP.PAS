@@ -5,7 +5,7 @@ unit RUNOP;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, Spin;
 
 type
@@ -52,7 +52,7 @@ implementation
 {$R *.lfm}
 
 uses GESCALE,INITIAL,DisUnit,WINGLOB,RUNSPEC, kies,rfoptions,
-  Disoptions,Popoptions,PredefintUnit, DATASET, datmod1,trendintvunit,math;
+  Disoptions,Popoptions,PredefintUnit, DATASET, datmod1,trendintvunit{,math};
 
 procedure Trunopform.setrunops;
 
@@ -148,8 +148,10 @@ begin
             PredefintForm.predefchecklist.Items.Add(fields[0].asstring);
             next;
           end;
+          close;
         end;
-      end;{with}
+        datamodule2.SQLTransaction1.Commit;
+      end;{with datasetform}
       if PredefintForm.predefchecklist.items.count>0 then
       begin
         PredefintForm.caption:='Interventions for the risk factor '+Tgenentity(currflist.items[risfac]).name;
@@ -186,8 +188,10 @@ begin
             PredefintForm.predefchecklist.Items.Add(fields[0].asstring);
             next;
           end;
+          close;
         end;
-      end;{with}
+        datamodule2.SQLTransaction1.Commit;
+      end;{with datasetform}
       if PredefintForm.predefchecklist.items.count>0 then
       begin
         PredefintForm.caption:='Interventions for the risk factor '+Tgenentity(currflist.items[risfac]).name;
@@ -258,8 +262,10 @@ begin
         PredefintForm.predefchecklist.Items.Add(fields[0].asstring);
         next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
   if PredefintForm.predefchecklist.items.count>0 then
   begin
     PredefintForm.caption:='Interventions for disease '+disopform.ziekte.Name;
