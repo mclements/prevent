@@ -3,13 +3,13 @@
 
 * Introduction
 
-- Jan Barendregt passed away on 3 June 2017. As per his last will and testament, his software has been released under GPL version 3.
 - The Prevent software was developed by Jan Barendragt. The software is described in the PhD thesis by Louise Gunning Schepers: https://repub.eur.nl/pub/51053/881123_GUNNING-SCHEPERS-Louisa-Johanna.pdf. 
+- Jan Barendregt passed away on 3 June 2017. As per his last will and testament, his software has been released under GPL version 3.
 - Documentation has been included for the Prevent software as written in Delphi.  
-- The Lazarus conversion is a work in progress.
+- *The Lazarus conversion is a work in progress.*
 
 * Issues with the Lazarus conversion
-- [ ] Shutdown has a memory leak. Any help here would be appreciated.
+- [ ] *Shutdown has a memory leak.* Any help here would be appreciated.
 - [ ] There are two versions for ~Tgenentity.pzaanpas~ -- one using a cohort perspective and one using an age-group perspective. See [[disunit.pas]].
 - Much of the functionality is *not* working:
   + [ ] Population plot is not working.
