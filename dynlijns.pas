@@ -5,9 +5,9 @@ unit dynlijns;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls,
-  Forms, Dialogs, dynchart, ComCtrls, StdCtrls, ExtCtrls, TAGraph, TASeries,
-  TeEngine, Series, TeeProcs, Chart, INITIAL;
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls,
+  Forms, Dialogs, dynchart, ComCtrls, {StdCtrls,} ExtCtrls, TAGraph, TASeries,
+  {TeEngine, Series, TeeProcs, Chart,} INITIAL;
 
 type
   Tdynlijnen = class(Tdyngraf)
@@ -33,7 +33,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,WINGLOB,OUTOP,math;
+{uses GESCALE,WINGLOB,OUTOP,math;}
 
 
 
@@ -42,9 +42,9 @@ procedure Tdynlijnen.doen(ymin,ymax:double;uitnaam,ls1,ls2,ls3,ls4:string);
 
 begin
   inherited;
-  chart1.leftaxis.automatic:=false;
-  chart1.leftaxis.maximum:=ymax*1.05;
-  chart1.leftaxis.minimum:=ymin*1.05;  
+  {chart1.leftaxis.automatic:=false;}
+  chart1.leftaxis.Range.Max:=ymax*1.05;
+  chart1.leftaxis.Range.Min:=ymin*1.05;  
   trackbar1.position:=trackbar1.max;
   chart1.Title.text[0]:=uitnaam;
   LineSeries1.Title:=ls1;
@@ -72,18 +72,18 @@ begin
   begin
     for ag:=0 to length(lokaal[tt,men,ref])-1 do
     begin
-      LineSeries1.yvalues.value[ag]:=lokaal[tt,men,ref,ag];
-      LineSeries3.yvalues.value[ag]:=lokaal[tt,fem,ref,ag];
+      LineSeries1.yvalue[ag]:=lokaal[tt,men,ref,ag];
+      LineSeries3.yvalue[ag]:=lokaal[tt,fem,ref,ag];
     end;
    end;
            4:
    begin
      for ag:=0 to length(lokaal[tt,men,ref])-1 do
      begin
-       LineSeries1.yvalues.value[ag]:=lokaal[tt,men,ref,ag];
-       LineSeries2.yvalues.value[ag]:=lokaal[tt,men,intv,ag];
-       LineSeries3.yvalues.value[ag]:=lokaal[tt,fem,ref,ag];
-       LineSeries4.yvalues.value[ag]:=lokaal[tt,fem,intv,ag];
+       LineSeries1.yvalue[ag]:=lokaal[tt,men,ref,ag];
+       LineSeries2.yvalue[ag]:=lokaal[tt,men,intv,ag];
+       LineSeries3.yvalue[ag]:=lokaal[tt,fem,ref,ag];
+       LineSeries4.yvalue[ag]:=lokaal[tt,fem,intv,ag];
      end;
    end;
  end;{case}

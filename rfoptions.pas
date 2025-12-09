@@ -5,7 +5,7 @@ unit rfoptions;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls,DisUnit, ComCtrls;
 
 type
@@ -32,7 +32,7 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,WINGLOB,INITIAL;
+uses GESCALE,{WINGLOB,}INITIAL;
 
 procedure TRFOpForm.FormCreate(Sender: TObject);
 begin

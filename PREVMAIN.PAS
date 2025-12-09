@@ -5,9 +5,9 @@ unit PREVMAIN;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, Menus, Tabs, StdCtrls, ExtCtrls, Buttons,
-  ComCtrls,checklst;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, Menus, {Tabs,} StdCtrls, ExtCtrls, Buttons,
+  ComCtrls{,checklst};
 
 type
   TMainForm = class(TForm)
@@ -44,7 +44,6 @@ type
     Keepinterventions1: TMenuItem;
     N13: TMenuItem;
     Uncertainty1: TMenuItem;
-    Image2: TImage;
     PopupMain: TPopupMenu;
     Dataset1: TMenuItem;
     Runtimeoptions1: TMenuItem;
@@ -127,7 +126,7 @@ implementation
 
 {$R *.lfm}
 
-uses math,GESCALE, WINGLOB,ABOUTUN,DATASET,RUNOP, OUTOP, RUNSPEC,
+uses math,GESCALE, WINGLOB,ABOUTUN,DATASET,RUNOP, OUTOP, {RUNSPEC,}
      Tabeluit, Grafuit1,
      INITIAL,DisUnit,STARTUN,dynchart, BEVOLUN,CalcUnit,
   memomes,Sensunit,
@@ -138,8 +137,8 @@ var    startt,stopt:Tdatetime;
 
 procedure TMainForm.exitdialog;
 begin
-   if MessageDlg('Terminate Prevent?', mtConfirmation,
-    [mbYes, mbNo], 0) = mrYes then
+  if Application.MessageBox('Terminate Prevent?', 'Confirm',
+    MB_YESNO+MB_ICONQUESTION) = IDYES then
     begin
       pointersweg;
       {hier moeten nog andere schoonmaak statements komen}
@@ -250,7 +249,6 @@ procedure TMainForm.uitvoerlook;
 begin
   bezigofniet(false);
   PageControlUit.visible:=uitbool;
-  image2.visible:=false;
   label2.visible:=true;
   N6.enabled:=false;
   runbut.caption:='&New run';
@@ -263,7 +261,6 @@ procedure TMainForm.startlook;
 begin
   uitbool:=false;
   PageControlUit.visible:=uitbool;
-  image2.visible:=true;
   label2.visible:=false;
   Specbut.enabled:=true;
   N6.enabled:=true;

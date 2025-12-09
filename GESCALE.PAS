@@ -12,7 +12,7 @@ procedure geAutoScale(MForm: TForm);
 
 implementation
 
-uses WINGLOB;
+{uses WINGLOB;}
 
 Type
 

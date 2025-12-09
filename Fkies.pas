@@ -5,13 +5,13 @@ unit Fkies;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  FileCtrl, StdCtrls, ExtCtrls;
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  FileCtrl, StdCtrls, ExtCtrls, ShellCtrls;
 
 type
   TFkiesForm = class(TForm)
-    DirectoryListBox1: TDirectoryListBox;
-    DriveComboBox1: TDriveComboBox;
+    DirectoryListBox1: TShellTreeView;
+    {DriveComboBox1: TDriveComboBox;}
     FileListBox1: TFileListBox;
     Panel1: TPanel;
     OKBut: TButton;
@@ -41,18 +41,18 @@ var
 
 implementation
 
-uses GESCALE,WINGLOB,OUTOP;
+uses GESCALE,{WINGLOB,}OUTOP;
 
 {$R *.lfm}
 
 procedure TFkiesForm.DirectoryListBox1Change(Sender: TObject);
 begin
-  FileListBox1.Directory := DirectoryListBox1.Directory;
+  FileListBox1.Directory := DirectoryListBox1.Root;
 end;
 
 procedure TFkiesForm.DriveComboBox1Change(Sender: TObject);
 begin
-  DirectoryListBox1.Drive := DriveComboBox1.Drive;
+  {DirectoryListBox1.Drive := DriveComboBox1.Drive;}
 end;
 
 procedure TFkiesForm.EscButClick(Sender: TObject);

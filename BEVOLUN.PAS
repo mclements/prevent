@@ -54,8 +54,8 @@ var
 Implementation
 
 Uses
-  WINGLOB,
-  STARTUN,DATASET, PREVMAIN,DisUnit,dynpyra,Popoptions,datmod1;
+  {WINGLOB,}
+  {STARTUN,}DATASET, {PREVMAIN,}DisUnit,{dynpyra,}Popoptions,datmod1;
 
 
 constructor Tpopulation.create;
@@ -306,8 +306,10 @@ begin
           tpopu.datavar[tt,sex,intv,a]:=tpopu.datavar[tt,sex,ref,a];
         Next;
       end;
+      close;
     end;
-  end;{with}
+    datamodule2.SQLTransaction1.Commit;
+    end;
 end;
 
 
@@ -344,6 +346,7 @@ begin
      for a:=0 to disaggmax do
        ttotmor.datavar[tt,sex,scen,a div 5]:=ttotmor.datavar[tt,sex,scen,a div 5]+totmor[scen,sex,a];
      for a:=0 to aggmax do
+     if tpopu.datavar[tt,sex,scen,a]>0.0 then
       ttotmor.datavar[tt,sex,scen,a]:=
         ttotmor.datavar[tt,sex,scen,a]/tpopu.datavar[tt,sex,scen,a];
    end;
@@ -355,6 +358,7 @@ begin
      for a:=0 to disaggmax do
        tdaly.datavar[tt,sex,scen,a div 5]:=tdaly.datavar[tt,sex,scen,a div 5]+totdale[scen,sex,a];
      for a:=0 to aggmax do
+     if tpopu.datavar[tt,sex,scen,a]>0 then
       tdaly.datavar[tt,sex,scen,a]:=
         tdaly.datavar[tt,sex,scen,a]/tpopu.datavar[tt,sex,scen,a];
    end;

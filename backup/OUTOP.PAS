@@ -1,10 +1,12 @@
-unit Outop;
+unit OUTOP;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, StdCtrls, ExtCtrls,initial, Spin, ComCtrls;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, StdCtrls, ExtCtrls,INITIAL, Spin, ComCtrls;
 
 type
   Toutopform = class(TForm)
@@ -61,9 +63,9 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses gescale,winglob,prevmain,bevolun,tabeluit,disunit,outvarunit;
+uses GESCALE,WINGLOB,PREVMAIN,BEVOLUN,Tabeluit,DisUnit,OutvarUnit;
 
 
 procedure Toutopform.closebutClick(Sender: TObject);

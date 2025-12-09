@@ -5,9 +5,9 @@ unit dynbars;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls,
   Forms, Dialogs, dynchart, ComCtrls, StdCtrls, ExtCtrls, TAGraph, TASeries,
-  TeEngine, Series, TeeProcs, Chart, INITIAL;
+  {TeEngine, Series, TeeProcs, Chart,} INITIAL;
 
 type
   Tdynbarren = class(Tdyngraf)
@@ -33,7 +33,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,WINGLOB,OUTOP,math;
+uses GESCALE{,WINGLOB,OUTOP,math};
 
 
 
@@ -43,9 +43,9 @@ var t:integer;
 
 begin
   inherited;
-  chart1.leftaxis.automatic:=false;
-  chart1.leftaxis.maximum:=ymax*1.05;
-  chart1.leftaxis.minimum:=ymin*1.05;
+  {chart1.leftaxis.automatic:=false;}
+  chart1.leftaxis.Range.Max:=ymax*1.05;
+  chart1.leftaxis.Range.Min:=ymin*1.05;
   trackbar1.width:=panel2.width-15;
   jaarlab.caption:=inttostr(beginjaar);
   caption:='Prevent - '+currentdataset+' output';
@@ -64,8 +64,8 @@ begin
   jaarlab.caption:=inttostr(beginjaar+tt);
   for ag:=0 to aggmax do
   begin
-    Manseries.yvalues.value[ag]:=lokaal[tt,men,ref,ag];
-    Vroseries.yvalues.value[ag]:=lokaal[tt,fem,ref,ag];
+    Manseries.yvalue[ag]:=lokaal[tt,men,ref,ag];
+    Vroseries.yvalue[ag]:=lokaal[tt,fem,ref,ag];
   end;
    trackbar1.position:=et-tt;
    jaarlab.repaint;

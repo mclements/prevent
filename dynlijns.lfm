@@ -23,7 +23,7 @@ inherited dynlijnen: Tdynlijnen
     BottomAxis.Grid.Color = clScrollBar
     BottomAxis.Grid.Visible = False
     LeftAxis.Grid.Color = clScrollBar
-    Legend.Alignment = laBottom
+    Legend.Alignment = laBottomCenter
     Align = alClient
     object LineSeries1: TLineSeries
       Marks.Arrow.Visible = False

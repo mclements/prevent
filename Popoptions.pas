@@ -5,7 +5,7 @@ unit Popoptions;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -45,7 +45,7 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,WINGLOB,INITIAL,PredefintUnit, DATASET, datmod1,BEVOLUN, PREVMAIN;
+uses GESCALE,{WINGLOB,}INITIAL,PredefintUnit, DATASET, datmod1,BEVOLUN, PREVMAIN;
 
 
 procedure TPopopForm.OKButClick(Sender: TObject);
@@ -105,8 +105,10 @@ begin
           PredefintForm.predefchecklist.Items.Add(fields[0].asstring);
           next;
         end;
+        close;
       end;
-    end;{with}
+      datamodule2.SQLTransaction1.Commit;
+    end;{with datasetform}
     if PredefintForm.predefchecklist.items.count>0 then
     begin
       PredefintForm.caption:=kop;

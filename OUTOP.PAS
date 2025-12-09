@@ -5,7 +5,7 @@ unit OUTOP;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls,INITIAL, Spin, ComCtrls;
 
 type
@@ -65,7 +65,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,WINGLOB,PREVMAIN,BEVOLUN,Tabeluit,DisUnit,OutvarUnit;
+uses GESCALE,WINGLOB,{PREVMAIN,}BEVOLUN{,Tabeluit,DisUnit,OutvarUnit};
 
 
 procedure Toutopform.closebutClick(Sender: TObject);

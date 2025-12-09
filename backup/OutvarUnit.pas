@@ -1,7 +1,9 @@
 unit OutvarUnit;
 
+{$MODE Delphi}
+
 interface
-uses classes,StdCtrls, Dialogs,initial;
+uses classes,StdCtrls, Graphics, Dialogs,INITIAL;
 
 Type
   Tdisuitvars=(invr,prevr,cfatvr,remivr,morvr,dalvr,cosvr,pifvr);
@@ -238,8 +240,8 @@ var
 
 implementation
 
-uses forms,math,sysutils,teengine,controls,prevmain,kies,bevolun,disunit,outop,dynlijns,grafuit1,
-     dynpyra,dynbars,tabeluit;
+uses forms,math,sysutils,{teengine} controls,PREVMAIN,kies,BEVOLUN,DisUnit,OUTOP,dynlijns,Grafuit1,
+     dynpyra,dynbars,Tabeluit;
 
 constructor Tgenuit.create(tt:integer);
 var
@@ -321,7 +323,10 @@ begin
     for ag:=0 to aggmax do
     begin
       resultvar[t,sex,ref,ag]:=(1.0-datavar[t,sex,ref,ag])*100.0;
-      resultvar[t,sex,intv,ag]:=(1.0-datavar[t,sex,intv,ag]/datavar[t,sex,ref,ag])*100.0;
+      if datavar[t,sex,ref,ag] > 0.0 then
+         resultvar[t,sex,intv,ag]:=(1.0-datavar[t,sex,intv,ag]/datavar[t,sex,ref,ag])*100.0
+      else
+         resultvar[t,sex,intv,ag]:=0.0;
     end;
   result:=resultvar;
 end;
@@ -636,6 +641,8 @@ begin
   begin
     step:=(hx-lx)/100.0;
     pmax:=round((hx-lx)/step);
+    dp := Tdisparams.create;
+    dpi := Tdisparams.create;
     setlength(dp,dist[ref,men,0].paramnum);
     setlength(dpi,dist[ref,men,0].paramnum);
     for t:=0 to tijds do
@@ -768,14 +775,14 @@ begin
       for ag:=0 to aggmax do
       if dif then
       begin
-        LineSeries1.AddXY(ag*5,lokaal[0,men,ref,ag], '' , clTeeColor );
-        LineSeries3.AddXY(ag*5,lokaal[0,fem,ref,ag], '' , clTeeColor );
+        LineSeries1.AddXY(ag*5,lokaal[0,men,ref,ag], '' , clDefault );
+        LineSeries3.AddXY(ag*5,lokaal[0,fem,ref,ag], '' , clDefault );
       end else
       begin
-        LineSeries1.AddXY(ag*5,lokaal[0,men,ref,ag], '' , clTeeColor );
-        LineSeries2.AddXY(ag*5,lokaal[0,men,intv,ag], '' , clTeeColor );
-        LineSeries3.AddXY(ag*5,lokaal[0,fem,ref,ag], '' , clTeeColor );
-        LineSeries4.AddXY(ag*5,lokaal[0,fem,intv,ag], '' , clTeeColor );
+        LineSeries1.AddXY(ag*5,lokaal[0,men,ref,ag], '' , clDefault );
+        LineSeries2.AddXY(ag*5,lokaal[0,men,intv,ag], '' , clDefault );
+        LineSeries3.AddXY(ag*5,lokaal[0,fem,ref,ag], '' , clDefault );
+        LineSeries4.AddXY(ag*5,lokaal[0,fem,intv,ag], '' , clDefault );
       end;
       doen(ymin,ymax,uitnaam,ls1,ls2,ls3,ls4);
     end;
@@ -828,14 +835,14 @@ begin
       for ag:=0 to length(lokaal[0,men,ref])-1 do
       if dif then
       begin
-        LineSeries1.AddXY(lx+step*ag,lokaal[0,men,ref,ag], '' , clTeeColor );
-        LineSeries3.AddXY(lx+step*ag,lokaal[0,fem,ref,ag], '' , clTeeColor );
+        LineSeries1.AddXY(lx+step*ag,lokaal[0,men,ref,ag], '' , clDefault );
+        LineSeries3.AddXY(lx+step*ag,lokaal[0,fem,ref,ag], '' , clDefault );
       end else
       begin
-        LineSeries1.AddXY(lx+step*ag,lokaal[0,men,ref,ag], '' , clTeeColor );
-        LineSeries2.AddXY(lx+step*ag,lokaal[0,men,intv,ag], '' , clTeeColor );
-        LineSeries3.AddXY(lx+step*ag,lokaal[0,fem,ref,ag], '' , clTeeColor );
-        LineSeries4.AddXY(lx+step*ag,lokaal[0,fem,intv,ag], '' , clTeeColor );
+        LineSeries1.AddXY(lx+step*ag,lokaal[0,men,ref,ag], '' , clDefault );
+        LineSeries2.AddXY(lx+step*ag,lokaal[0,men,intv,ag], '' , clDefault );
+        LineSeries3.AddXY(lx+step*ag,lokaal[0,fem,ref,ag], '' , clDefault );
+        LineSeries4.AddXY(lx+step*ag,lokaal[0,fem,intv,ag], '' , clDefault );
       end;
       doen(ymin,ymax,uitnaam,ls1,ls2,ls3,ls4);
     end;
@@ -871,8 +878,8 @@ begin
         with Hypergrid1 do
         begin
           cells[0,1]:='Age';
-          for ind:=0 to nrcol do columns[ind].caption:=tcol[ind];
-          for ind:=0 to nrhead do headings[ind].caption:=thead[ind];
+          for ind:=0 to nrcol do columns[ind].title.caption:=tcol[ind];
+          {for ind:=0 to nrhead do headings[ind].caption.title:=thead[ind];}
           if dif then
           for ag:=0 to aggmax do
           begin
@@ -1008,15 +1015,15 @@ begin
       if dif then
       for tt:=0 to et do
       begin
-        LineSeries1.AddXY(beginjaar+tt,lok[tt,men,ref,0], '' , clTeeColor );
-        LineSeries3.AddXY(beginjaar+tt,lok[tt,fem,ref,0], '' , clTeeColor );
+        LineSeries1.AddXY(beginjaar+tt,lok[tt,men,ref,0], '' , clDefault );
+        LineSeries3.AddXY(beginjaar+tt,lok[tt,fem,ref,0], '' , clDefault );
       end else
       for tt:=0 to et do
       begin
-        LineSeries1.AddXY(beginjaar+tt,lok[tt,men,ref,0], '' , clTeeColor );
-        LineSeries2.AddXY(beginjaar+tt,lok[tt,men,intv,0], '' , clTeeColor );
-        LineSeries3.AddXY(beginjaar+tt,lok[tt,fem,ref,0], '' , clTeeColor );
-        LineSeries4.AddXY(beginjaar+tt,lok[tt,fem,intv,0], '' , clTeeColor );
+        LineSeries1.AddXY(beginjaar+tt,lok[tt,men,ref,0], '' , clDefault );
+        LineSeries2.AddXY(beginjaar+tt,lok[tt,men,intv,0], '' , clDefault );
+        LineSeries3.AddXY(beginjaar+tt,lok[tt,fem,ref,0], '' , clDefault );
+        LineSeries4.AddXY(beginjaar+tt,lok[tt,fem,intv,0], '' , clDefault );
       end;
       doen(uitnaam,ls1,ls2,ls3,ls4);
     end;
@@ -1099,8 +1106,8 @@ begin
       with Hypergrid1 do
       begin
         cells[0,1]:='Year';
-        for ind:=0 to nrcol do columns[ind].caption:=tcol[ind];
-        for ind:=0 to nrhead do headings[ind].caption:=thead[ind];
+        for ind:=0 to nrcol do columns[ind].title.caption:=tcol[ind];
+        {for ind:=0 to nrhead do headings[ind].caption:=thead[ind];}
         if dif then
         for tt:=0 to et do
         begin
@@ -1290,17 +1297,17 @@ begin
         end;
       end;
       with Wshared do
-        for ag:=0 to aggmax do Addx(lokaal[0,fem,ref,ag]/globdeeldoor,  inttostr(ag*5) , clTeeColor) ;
+        for ag:=0 to aggmax do Addx(lokaal[0,fem,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
       with Wloss do
-         for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clTeeColor) ;
+         for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
       with Wgain do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clTeeColor) ;
+        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
       with Mshared do
-        for ag:=0 to aggmax do Addx(lokaal[0,men,ref,ag]/globdeeldoor,  inttostr(ag*5) , clTeeColor) ;
+        for ag:=0 to aggmax do Addx(lokaal[0,men,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
       with Mloss do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clTeeColor) ;
+        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
       with Mgain do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clTeeColor) ;
+        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
       doen(ymin,ymax,uitnaam,ls1,ls2,ls3,ls4);
     end;
   end else laatdyntabzien(population.tpopu.datavar);
@@ -1315,6 +1322,7 @@ var sex:tsex;
     lok:Tdatavar;
 
 begin
+  lok := Tdatavar.create;
   setlength(lok,population.tpopu.tijds+1);
   for tt:=0 to population.tpopu.tijds do
    for sex:=men to fem do
@@ -1343,13 +1351,13 @@ begin
       with ManSeries do
       begin
         for ag:=0 to aggmax do
-          Add(lokaal[0,men,ref,ag],inttostr(ag*5),clTeeColor);
+          Add(lokaal[0,men,ref,ag],inttostr(ag*5),clDefault);
         title:='Men';
       end;
       with VroSeries do
       begin
         for ag:=0 to aggmax do
-           Add(lokaal[0,fem,ref,ag],inttostr(ag*5),clTeeColor);
+           Add(lokaal[0,fem,ref,ag],inttostr(ag*5),clDefault);
         title:='Women';
       end;
       doen(ymin,ymax,uitnaam,ls1,ls2,ls3,ls4);

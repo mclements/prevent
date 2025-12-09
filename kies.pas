@@ -5,7 +5,7 @@ unit kies;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls,DisUnit;
 
 type

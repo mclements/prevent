@@ -5,8 +5,8 @@ unit STARTUN;
 interface
 Uses
   forms,dialogs,sysutils,inifiles,classes,
-  INITIAL,
-  WINGLOB;
+  INITIAL
+  {,WINGLOB};
 
 Procedure Opening;
 

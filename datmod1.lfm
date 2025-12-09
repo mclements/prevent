@@ -9,35 +9,26 @@ object DataModule2: TDataModule2
     Left = 64
     Top = 96
   end
-  object Preventinput: TDAODatabase
-    ReadOnly = True
-    Version = '1.99'
+  object Preventinput: TSQLite3Connection
     Left = 64
     Top = 40
   end
-  object InputQ1: TDAOQuery
+  object InputQ1: TSQLQuery
     Database = Preventinput
-    Parameters = []
-    OpenType = db_OpenDynaset
     Left = 120
     Top = 40
   end
-  object InputQ2: TDAOQuery
+  object InputQ2: TSQLQuery
     Database = Preventinput
-    Parameters = []
-    OpenType = db_OpenDynaset
     Left = 128
     Top = 96
   end
-  object Preventoutput: TDAODatabase
-    Version = '1.99'
+  object Preventoutput: TSQLite3Connection
     Left = 216
     Top = 48
   end
-  object outputQ1: TDAOQuery
+  object outputQ1: TSQLQuery
     Database = Preventoutput
-    Parameters = []
-    OpenType = db_OpenDynaset
     Left = 288
     Top = 64
   end

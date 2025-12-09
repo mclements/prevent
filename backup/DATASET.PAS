@@ -1,9 +1,11 @@
-unit Dataset;
+unit DATASET;
+
+{$MODE Delphi}
 
 interface
 
 uses
-  SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, inifiles, ComCtrls, Menus;
 
 const GDPstring:string='GDP per capita';
@@ -41,7 +43,6 @@ type
    procedure datainisets;
   public
     { Public declarations }
-    DAO35installed,DAO36installed:Boolean;
     function d2s(drijf:double):string;
     function psq(instring:string):string;
     procedure currentset;
@@ -53,7 +54,6 @@ type
     procedure putquery2(qstring:string);
     procedure execquery1(qstring:string);
     procedure execuitquery1(qstring:string);
-    procedure whichDAO;
   end;
 
 var
@@ -62,10 +62,10 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
-uses DAODatabase,gescale,winglob, datmod1,db,prevmain, initial,disunit,bevolun,
-  Runop,math;
+uses GESCALE,WINGLOB, datmod1,sqlite3conn,sqldb,db,{PREVMAIN,} INITIAL,DisUnit,BEVOLUN,
+  RUNOP,math;
 
 const
   rlijnhoogte=30;
@@ -73,7 +73,7 @@ const
 function Tdatasetform.psq(instring:string):string;
 
 begin
-  instring:=''''+instring+'''';
+  instring:='"'+instring+'"';
   result:=instring;
 end;
 
@@ -207,18 +207,26 @@ procedure TdatasetForm.openset;
 begin
   with datamodule2 do
   begin
-    with preventinput do
-    begin
-      DatabaseName:=currentpad;
-      readonly:=false;
-      connected:=true;
-    end;
+   preventInput := TSQLite3Connection.Create(nil);
+   SQLTransaction1 := TSQLTransaction.Create(nil);
+   preventInput.Transaction := SQLTransaction1;
+   preventinput.DatabaseName := currentpad;
+   InputQ1 := TSQLQuery.Create(nil);
+   InputQ1.Database := preventInput;
+   InputQ2 := TSQLQuery.Create(nil);
+   InputQ2.Database := preventInput;
+   InputQ1.PacketRecords := -1; // !#?
+   InputQ2.PacketRecords := -1; // !#?
+   preventInput.open;
   end;
 end;
 
 procedure TdatasetForm.closeset;
 begin
-  with datamodule2 do preventinput.connected:=false;
+  with datamodule2 do
+  begin
+    preventinput.connected:=false;
+  end;
 end;
 
 procedure TdatasetForm.putquery1(qstring:string);
@@ -230,10 +238,13 @@ begin
     Active:=false;
     SQL.clear;
     SQL.Add(qstring);
+    // SQL.Text := qstring;
+    datamodule2.SQLTransaction1.StartTransaction;
     try
       Active:=true;
+      // Open;
     except
-      on E:Edatabaseerror do ShowMessage(e.message);
+      on E:Edatabaseerror do begin ShowMessage(e.message); datamodule2.SQLTransaction1.Rollback; end;
     end;
   end;
 end;
@@ -248,7 +259,8 @@ begin
     SQL.clear;
     SQL.Add(qstring);
     try
-      execute(7);
+      {execute(7);}
+      Open;
     except
       on E:Edatabaseerror do ShowMessage(e.message);
     end;
@@ -265,7 +277,8 @@ begin
     SQL.clear;
     SQL.Add(qstring);
     try
-      execute(7);
+      {execute(7);}
+      Open;
     except
       on E:Edatabaseerror do ShowMessage(e.message);
     end;
@@ -285,44 +298,13 @@ begin
   end;
 end;
 
-procedure TdatasetForm.whichDAO;
-
-begin
-  DAO36installed:=False;
-  DAO35installed:=False;
-  with datamodule2 do
-  begin
-    try
-      CreateEngine(Dao36, '');
-      DAO36installed:= True;
-      preventinput.DAOversion:=Dao36;
-      Preventoutput.DAOversion:=Dao36;
-    except
-      DAO36installed:=False;
-    end;
-    if not DAO36installed then
-    try
-      CreateEngine(Dao35, '');
-      DAO35installed:= True;
-      preventinput.DAOversion:=Dao35;
-      Preventoutput.DAOversion:=Dao35;
-    except
-      DAO35installed:=False;
-    end;
-  end;
-  if (not DAO35installed) and (not DAO36installed) then
-  begin
-    MessageDlg('This application requires MS DAO to be installed, which is not the case', mtError, [mbOK], 0);
-    Application.terminate;
-  end;
-end;
-
 
 procedure TdatasetForm.datainisets;
 
 var
     ind,cn:integer;
     cohortrf:boolean;
+    field:TField;
 
 begin
   population:=Tpopulation.create;
@@ -346,7 +328,9 @@ begin
         hdnumstancost[true]:=' ('+costunit+' per person)';
         hdnumstancost[false]:=' (millons of '+costunit+')';
       end;
+      close;
     end;
+    datamodule2.SQLTransaction1.Commit;
   aggmax:=disaggmax div 5;
   restagg:=disaggmax-aggmax*5+1;
   disaggmax1:=disaggmax+1;
@@ -397,11 +381,10 @@ begin
         end;
       end else {het is een risicofactor}
       begin
-        try
-          cohortrf:=Fieldbyname('CohortPrev').Asboolean;
-        except
-          cohortrf:=false;
-        end;
+        field := FindField('CohortPrev');
+        if Assigned(field) then
+          cohortrf:=field.Asboolean
+        else cohortrf := false;
         if Fieldbyname('Continuous').Asboolean then {continue rf}
           riskfactor:=Tconrf.Create(Fieldbyname('Name').asstring)
         else {het is een category rf}
@@ -411,8 +394,10 @@ begin
         riskfactorlist.add(riskfactor);
       end;
       next;
-    end; {with inputq1}
-  end;
+    end;
+    close;
+  end; {with inputq1}
+  datamodule2.SQLTransaction1.Commit;
 
   for ind:=0 to riskfactorlist.count-1 do
     if Tgenentity(riskfactorlist.items[ind]) is Tcatrf then
@@ -420,19 +405,23 @@ begin
       putquery1('SELECT * FROM CatrfCats where Riskfactorname='
         +psq(Tcatrf(riskfactorlist.items[ind]).name)+' order by Catno');
       with datamodule2.inputQ1 do
-      with Tcatrf(riskfactorlist.items[ind]) do
       begin
-        first;
-        cn:=0;
-        catno:=recordcount;
-        setlength(catnames,catno);
-        while not eof do
+        with Tcatrf(riskfactorlist.items[ind]) do
         begin
-          catnames[cn]:=Fieldbyname('CatName').asstring;
-          inc(cn);
-          next;
+          first;
+          cn:=0;
+          catno:=recordcount;
+          setlength(catnames,catno);
+          while not eof do
+          begin
+            catnames[cn]:=Fieldbyname('CatName').asstring;
+            inc(cn);
+            next;
+          end;
         end;
+        close;
       end; {with inputq1}
+      datamodule2.SQLTransaction1.Commit;
     end;
 
   for ind:=0 to riskfactorlist.count-1 do
@@ -496,7 +485,9 @@ begin
          end;  
          Next;
        end;
+       close;
      end;
+     datamodule2.SQLTransaction1.Commit;
    end;
 end;
 
@@ -541,7 +532,6 @@ end;
 procedure TdatasetForm.FormCreate(Sender: TObject);
 begin
   geautoscale(datasetForm);
-  whichdao;
 end;
 
 

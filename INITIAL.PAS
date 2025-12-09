@@ -143,8 +143,8 @@ var
 {----------------------------------------------------------------------}
 implementation
 
-uses WINGLOB,Teengine,chart,series,Grafuit1,dynlijns,Tabeluit,OUTOP,BEVOLUN,
-     math;
+uses {WINGLOB,Teengine} tagraph,taseries
+     {Grafuit1,dynlijns,Tabeluit,BEVOLUN,math};
 
 constructor Tdistribution.create(n:string);
 begin

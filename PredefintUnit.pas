@@ -5,7 +5,7 @@ unit PredefintUnit;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, CheckLst, ExtCtrls;
 
 type

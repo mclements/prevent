@@ -1,9 +1,11 @@
 unit parasel;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -37,7 +39,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TParaselForm.CloseButClick(Sender: TObject);
 begin

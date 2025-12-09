@@ -1,22 +1,22 @@
 object MemoForm: TMemoForm
   Left = 361
+  Height = 319
   Top = 272
   Width = 405
-  Height = 319
   Caption = 'MemoForm'
+  ClientHeight = 319
+  ClientWidth = 405
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
-  Font.Style = []
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  LCLVersion = '3.0.0.3'
   object Memo1: TMemo
     Left = 0
+    Height = 278
     Top = 0
-    Width = 397
-    Height = 251
+    Width = 405
     Align = alClient
     Lines.Strings = (
       'Memo1'
@@ -26,23 +26,24 @@ object MemoForm: TMemoForm
   end
   object BotPanel: TPanel
     Left = 0
-    Top = 251
-    Width = 397
     Height = 41
+    Top = 278
+    Width = 405
     Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 405
+    ParentBackground = False
     TabOrder = 1
     object closebut: TButton
       Left = 270
-      Top = 6
-      Width = 89
       Height = 25
       Hint = 'Use current settings'
+      Top = 6
+      Width = 89
       Caption = '&Close'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
       Font.Name = 'Arial'
-      Font.Style = []
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
@@ -51,9 +52,9 @@ object MemoForm: TMemoForm
     end
     object ClearBut: TButton
       Left = 174
+      Height = 25
       Top = 6
       Width = 75
-      Height = 25
       Caption = 'C&lear'
       TabOrder = 1
       OnClick = ClearButClick

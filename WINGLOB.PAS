@@ -4,7 +4,7 @@ unit WINGLOB;
 
 interface
 
-uses INITIAL;
+//uses INITIAL;
 
 var
   uitbool:boolean;

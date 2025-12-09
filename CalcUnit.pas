@@ -36,36 +36,6 @@ const
 type
   Tndimvec=array of double;
 
-  Tamoeba=class
-    ftol:Double;
-    itmax:integer;
-    alpha,beta,gamma,simplex:Double;
-    ndim,ndimp1:integer;
-    iter,ilo,ihi,inhi:integer;
-    ypr,yprr,rtol:double;
-    done,reached:boolean;
-    uitvec,inivec,pr,prr,pbar:Tndimvec;
-    vecnaam:array of string;
-    y:array of Double;
-    p:array of Tndimvec;
-
-    function haalstraf(ndimvec:Tndimvec):Double; virtual; abstract;
-    procedure minmaxy;
-    procedure face;
-    procedure extralpha;
-    procedure extragamma;
-    procedure secondbest;
-    procedure middling;
-    function amrun(init:Tndimvec):Tndimvec;
-
-    constructor Create(numdim:integer);
-    destructor destroy; override;
-  end;
-
-  Tamoeba1=class(Tamoeba)
-    function haalstraf(ndimvec:Tndimvec):Double; override;
-  end;
-
 const
   jmax=20;
   jmaxp=jmax+1;
@@ -92,7 +62,6 @@ type
 
 var
   romberg:Tromberg;
-  amoeba:Tamoeba1;
   theominromberg:Ttheominromberg;
   
 function gammaln(xx:double):double;
@@ -174,6 +143,7 @@ begin
   jvar:=1;
   har[1]:=1.0;
   klaar:=false;
+  ss:=0.0;
   while not klaar do
   begin
     trapzd(A, B,sar[jvar],jvar);
@@ -277,215 +247,6 @@ end;
 
 
 
-
-{---------------------------Amoebe------------------}
-
-constructor Tamoeba.Create(numdim:integer);
-begin
-  inherited Create;
-  ftol:=defftol;
-  itmax:=defitmax;
-  simplex:=defsimplex;
-  alpha:=defalpha;
-  beta:=defbeta;
-  gamma:=defgamma;
-  reached:=False;
-  ndim:=numdim-1;
-  ndimp1:=numdim;
-  setlength(uitvec,numdim);
-  setlength(inivec,numdim);
-  setlength(pr,numdim);
-  setlength(prr,numdim);
-  setlength(pbar,numdim);
-  setlength(vecnaam,numdim);
-  setlength(y,numdim+1);
-  setlength(p,numdim+1,numdim);
-end;
-
-destructor Tamoeba.destroy;
-begin
-  uitvec:=nil;
-  inivec:=nil;
-  pr:=nil;
-  prr:=nil;
-  pbar:=nil;
-  vecnaam:=nil;
-  y:=nil;
-  p:=nil;
-  inherited destroy;
-end;
-
-
-procedure Tamoeba.minmaxy;
-
-var iind:integer;
-
-begin
-  ilo:=0;
-  if y[0]>y[1] then
-  begin
-    ihi:=0;
-    inhi:=1;
-  end else
-  begin
-    ihi:=1;
-    inhi:=0;
-  end;
-  for iind:=0 to ndimp1 do
-  begin
-    if y[iind]<y[ilo] then ilo:=iind;
-    if y[iind]>y[ihi] then
-    begin
-      inhi:=ihi;
-      ihi:=iind;
-    end else
-    if y[iind]>y[inhi] then if iind<>ihi then inhi:=iind;
-  end;
-  if (y[ihi]+y[ilo]>0) then
-     rtol:=2.0*abs(y[ihi]-y[ilo])/(abs(y[ihi])+abs(y[ilo]))
-     else rtol:=ftol/2.0;
-  if rtol<ftol then
-  begin
-    done:=true;
-    for iind:=0 to ndim do uitvec[iind]:=p[ilo,iind];
-  end;
-end;
-
-procedure Tamoeba.face;
-
-var iind,jind:integer;
-
-begin
-  for iind:=0 to ndim do pbar[iind]:=0.0;
-  for iind:=0 to ndimp1 do
-    if iind<>ihi then
-      for jind:=0 to ndim do pbar[jind]:=pbar[jind]+p[iind,jind];
-end;
-
-procedure Tamoeba.extralpha;
-
-var jind:integer;
-
-begin
-  for jind:=0 to ndim do
-  begin
-    pbar[jind]:=pbar[jind]/(ndim+1);
-    pr[jind]:=(1.0+alpha)*pbar[jind]-alpha*p[ihi,jind];
-  end;
-end;
-
-procedure Tamoeba.extragamma;
-
-var jind:integer;
-
-begin
-  for jind:=0 to ndim do prr[jind]:=gamma*pr[jind]+(1.0-gamma)*pbar[jind];
-  yprr:=haalstraf(prr);
-  if yprr<y[ilo] then
-  begin
-    for jind:=0 to ndim do p[ihi,jind]:=prr[jind];
-    y[ihi]:=yprr;
-  end else
-  begin
-    for jind:=0 to ndim do p[ihi,jind]:=pr[jind];
-    y[ihi]:=ypr;
-  end;
-end;
-
-procedure Tamoeba.secondbest;
-
-var iind,jind:integer;
-
-begin
-  if ypr<y[ihi] then
-  begin
-    for jind:=0 to ndim do p[ihi,jind]:=pr[jind];
-    y[ihi]:=ypr;
-  end;
-  for jind:=0 to ndim do prr[jind]:=beta*p[ihi,jind]+(1.0-beta)*pbar[jind];
-  yprr:=haalstraf(prr);
-  if yprr<y[ihi] then
-  begin
-    for jind:=0 to ndim do p[ihi,jind]:=prr[jind];
-    y[ihi]:=yprr;
-  end else
-  begin
-    for iind:=0 to ndimp1 do
-     if iind<>ilo then
-     begin
-       for jind:=0 to ndim do
-       begin
-         pr[jind]:=0.5*(p[iind,jind]+p[ilo,jind]);
-         p[iind,jind]:=pr[jind];
-       end;
-       y[iind]:=haalstraf(pr);
-     end;
-  end;
-end;
-
-
-procedure Tamoeba.middling;
-
-var jind:integer;
-
-begin
-  for jind:=0 to ndim do p[ihi,jind]:=pr[jind];
-  y[ihi]:=ypr;
-end;
-
-
-function Tamoeba.amrun(init:Tndimvec):Tndimvec;
-
-var jind,iind:integer;
-
-begin
-  iter:=0;
-  done:=false;
-  inivec:=init;
-
-  for iind:=0 to ndimp1 do
-   for jind:=0 to ndim do
-      if iind=jind then
-      begin
-        if inivec[jind]<>0.0 then p[iind,jind]:=inivec[jind]*simplex
-        else p[iind,jind]:=0.1;
-      end else p[iind,jind]:=inivec[jind];
-  for iind:=0 to ndimp1 do
-  begin
-    y[iind]:=haalstraf(p[iind]);
-  end;
-  try
-    while not done do
-    begin
-      inc(iter);
-      minmaxy;
-      face;
-      extralpha;
-      ypr:=haalstraf(pr);
-      if ypr<=y[ilo] then extragamma
-         else if ypr>=y[inhi] then secondbest
-              else middling;
-      if iter=itmax then
-      begin
-        done:=true;
-        reached:=True;
-        for iind:=0 to ndim do uitvec[iind]:=p[ilo,iind];
-      end;
-    end;
-  except
-    on Ematherror do
-    begin
-      for iind:=0 to ndim do uitvec[iind]:=p[ilo,iind];
-      MessageDlg('Internal error: downhill simplex method', mtError, [mbOK], 0);
-    end;
-  end;
-  result:=uitvec;
-end;
-
-function Tamoeba1.haalstraf(ndimvec:Tndimvec):Double;
-begin
-{  Result:=mainform.straffunctie(ndimvec);}
-end;
 
 
 end.

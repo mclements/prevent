@@ -1,19 +1,22 @@
 unit datmod1;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  DBTables, Db, DAODatabase, DAODataset, DAOQuery;
+  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  sqldb, Db, sqlite3conn {,DAODatabase, DAODataset, DAOQuery};
 
 type
   TDataModule2 = class(TDataModule)
+    SQLTransaction1, SQLTransaction2: TSQLTransaction;
     DataSource1: TDataSource;
-    Preventinput: TDAODatabase;
-    InputQ1: TDAOQuery;
-    InputQ2: TDAOQuery;
-    Preventoutput: TDAODatabase;
-    outputQ1: TDAOQuery;
+    Preventinput: TSQLite3Connection;
+    InputQ1: TSQLQuery;
+    InputQ2: TSQLQuery;
+    Preventoutput: TSQLite3Connection;
+    outputQ1: TSQLQuery;
   private
     { Private declarations }
   public
@@ -27,6 +30,6 @@ implementation
 
 
 
-{$R *.DFM}
+{$R *.lfm}
 
 end.

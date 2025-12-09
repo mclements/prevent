@@ -5,8 +5,8 @@ unit RUNSPEC;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, LMessages, Messages, Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, StdCtrls, Spin, Grids, CheckLst;
+  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, StdCtrls, {Spin, Grids,} CheckLst;
 
 type
   TrunForm = class(TForm)
@@ -40,7 +40,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,WINGLOB, INITIAL, DisUnit, PREVMAIN, BEVOLUN;
+uses GESCALE,WINGLOB, INITIAL, DisUnit, PREVMAIN{, BEVOLUN};
 
 procedure TrunForm.datsetlabelset;
 begin
