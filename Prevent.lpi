@@ -41,45 +41,45 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="PREVMAIN.PAS"/>
+        <Filename Value="prevmain.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
       <Unit2>
-        <Filename Value="ABOUTUN.PAS"/>
+        <Filename Value="aboutun.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="DATASET.PAS"/>
+        <Filename Value="dataset.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="datasetForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit3>
       <Unit4>
-        <Filename Value="WINGLOB.PAS"/>
+        <Filename Value="winglob.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="RUNOP.PAS"/>
+        <Filename Value="runop.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit5>
       <Unit6>
-        <Filename Value="OUTOP.PAS"/>
+        <Filename Value="outop.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="RUNSPEC.PAS"/>
+        <Filename Value="runspec.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="STARTUN.PAS"/>
+        <Filename Value="startun.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit8>
       <Unit9>
@@ -88,11 +88,11 @@
         <HasResources Value="True"/>
       </Unit9>
       <Unit10>
-        <Filename Value="INITIAL.PAS"/>
+        <Filename Value="initial.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit10>
       <Unit11>
-        <Filename Value="GESCALE.PAS"/>
+        <Filename Value="gescale.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit11>
       <Unit12>
@@ -108,17 +108,17 @@
         <HasResources Value="True"/>
       </Unit13>
       <Unit14>
-        <Filename Value="Fkies.pas"/>
+        <Filename Value="fkies.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit14>
       <Unit15>
-        <Filename Value="Grafuit1.pas"/>
+        <Filename Value="grafuit1.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit15>
       <Unit16>
-        <Filename Value="Tabeluit.pas"/>
+        <Filename Value="tabeluit.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit16>
@@ -133,7 +133,7 @@
         <HasResources Value="True"/>
       </Unit18>
       <Unit19>
-        <Filename Value="DisUnit.pas"/>
+        <Filename Value="disunit.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit19>
       <Unit20>
@@ -142,16 +142,16 @@
         <HasResources Value="True"/>
       </Unit20>
       <Unit21>
-        <Filename Value="Disoptions.pas"/>
+        <Filename Value="disoptions.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit21>
       <Unit22>
-        <Filename Value="BEVOLUN.PAS"/>
+        <Filename Value="bevolun.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit22>
       <Unit23>
-        <Filename Value="Popoptions.pas"/>
+        <Filename Value="popoptions.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit23>
@@ -168,7 +168,7 @@
         <HasResources Value="True"/>
       </Unit25>
       <Unit26>
-        <Filename Value="Sensunit.pas"/>
+        <Filename Value="sensunit.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit26>
@@ -178,17 +178,17 @@
         <HasResources Value="True"/>
       </Unit27>
       <Unit28>
-        <Filename Value="Permusens.pas"/>
+        <Filename Value="permusens.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit28>
       <Unit29>
-        <Filename Value="GetnameUnit.pas"/>
+        <Filename Value="getnameunit.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit29>
       <Unit30>
-        <Filename Value="PredefintUnit.pas"/>
+        <Filename Value="predefintunit.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
       </Unit30>
@@ -197,11 +197,11 @@
         <IsPartOfProject Value="True"/>
       </Unit31>
       <Unit32>
-        <Filename Value="OutvarUnit.pas"/>
+        <Filename Value="outvarunit.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit32>
       <Unit33>
-        <Filename Value="CalcUnit.pas"/>
+        <Filename Value="calcunit.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit33>
     </Units>
