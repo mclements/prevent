@@ -1,3 +1,5 @@
 *~
 backup
 *.lps
+lib
+temp.log

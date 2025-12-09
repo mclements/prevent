@@ -46,6 +46,7 @@
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PREVMAIN"/>
       </Unit1>
       <Unit2>
         <Filename Value="aboutun.pas"/>
@@ -135,6 +136,7 @@
       <Unit19>
         <Filename Value="disunit.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="DisUnit"/>
       </Unit19>
       <Unit20>
         <Filename Value="rfoptions.pas"/>

@@ -334,7 +334,7 @@ end;
 
 
 procedure Tgenentity.pzaanpas(tt:integer);
-{versie zonder cumulative risk, age group perspective}
+// versie zonder cumulative risk, age group perspective
 
 var ind,ag,ht,pt:integer;
     pidr0,pidrt:Tpidr;
@@ -365,7 +365,7 @@ begin
           if (pt<length(dis.pzlist.datavar)) then
           for ag:=0 to disaggmax do
           begin
-          if (pidr00[scen,sex,ag]>0.0) then
+          if (pidr0[scen,sex,ag]>0.0) then
             pif:=(laglat(ht-tt)*(pidr0[scen,sex,ag]-
                     pidrt[scen,sex,ag])/pidr0[scen,sex,ag])
             else pif := 1.0;
@@ -380,8 +380,8 @@ begin
         end;
       end;
       end;
-    end; {with}
-  end; {for ind}
+    end; // with
+  end; // for ind
   except
     on E:Exception do
       MessageDlg('PZerror: '+e.message+', '+self.name+', PIDR0 '+floattostrf(pidr0[scen,sex,ag],fffixed,10,3)+
@@ -391,10 +391,9 @@ begin
 end;
 
 
-
 (*
 procedure Tgenentity.pzaanpas(tt:integer);
-{versie zonder cumulative risk, cohort perspective}
+// versie zonder cumulative risk, cohort perspective
 
 var ind,ag,ht,pt,agcoh,tmpll:integer;
     pidr0,pidrt:Tpidr;
@@ -435,13 +434,13 @@ begin
         then pif:=1.0-(1.0-(pidr0[scen,sex,ag-1]-
                 pidrt[scen,sex,ag])/pidr0[scen,sex,ag-1])/pidr00[scen,sex,ag]
         else pif:=1.0;
-{        if (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]=pidr0[scen,sex,ag-1]-pidrt[scen,sex,ag])
-        and (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]<>pidr00[scen,sex,ag-1]-pidr00[scen,sex,ag]) then pif:=0.0;}
-{        if (tt>28) and (ag=65) then pif:=0.0; doesn't work either: intervention goes to highest age as well}
+//        if (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]=pidr0[scen,sex,ag-1]-pidrt[scen,sex,ag])
+//        and (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]<>pidr00[scen,sex,ag-1]-pidr00[scen,sex,ag]) then pif:=0.0;
+//        if (tt>28) and (ag=65) then pif:=0.0; doesn't work either: intervention goes to highest age as well
         for agcoh:=ag to disaggmax do
         begin
           pt:=tt-self.lookback+agcoh-ag;
-          if (pt>=0) and {() and} (pt<length(dis.pzlist.datavar)) then
+          if (pt>=0) and (pt<length(dis.pzlist.datavar)) then
           begin  //problem: when lag>1 the same agcoh pt combination will be hit on successive tts
             if pidr0[ref,sex,ag-1]=pidr0[ref,sex,-1] then tmpll:=1000  //this is to remove the lag in age
             else tmpll:=agcoh-ag+1;
@@ -450,7 +449,7 @@ begin
             if agcoh<disaggmax then
               dis.pzlist.datavar[pt,sex,scen,agcoh div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*tmpll2
-                {dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*exp(ln(1.0-pif*laglat(tmpll))*0.2)}
+                // dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*exp(ln(1.0-pif*laglat(tmpll))*0.2)
             else  //pif eerst omzetten naar rate, dan delen door 5, en dan weer kans
               dis.pzlist.datavar[pt,sex,scen,agcoh div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*(1.0-pif*laglat(tmpll));
@@ -458,8 +457,8 @@ begin
         end;
       end;
     end;
-    end;{with}
-  end;{ind}
+    end; //with
+  end; //ind
   except
     on E:Exception do
       MessageDlg('PZerror: '+e.message+', '+self.name+', agcoh '+inttostr(agcoh)+', ag '+inttostr(ag)+', PIDR00 '+floattostrf(Trfdis(rflist.items[ind]).pidr00[scen,sex,ag],fffixed,10,3)+
