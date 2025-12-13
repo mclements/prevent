@@ -42,7 +42,7 @@ object tableuitform: Ttableuitform
       OnClick = closebutClick
     end
   end
-  object HyperGrid1: THyperGrid
+  object HyperGrid1: TStringGrid
     Left = 0
     Top = 41
     Width = 427
@@ -59,25 +59,7 @@ object tableuitform: Ttableuitform
     ParentFont = False
     TabOrder = 2
     OnKeyDown = HyperGrid1KeyDown
-    Columns = <    
-      item
-        Name = 'Column 1'
-      end    
-      item
-        Name = 'Column 2'
-      end    
-      item
-        Name = 'Column 3'
-      end    
-      item
-        Name = 'Column 4'
-      end    
-      item
-        Name = 'Column 5'
-      end>
-    Headings = <>
-    HyperOptions = [hgoptDrawFocusRectangle, hgoptHighlightSelection]
-    AVisibleColumnCount = 5
+    Columns = <>    
     RowHeights = (
       44
       20

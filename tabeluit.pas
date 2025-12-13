@@ -5,8 +5,8 @@ unit Tabeluit;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
-  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,INITIAL {,HgHGrid, HgGrid};
+  SysUtils, LCLIntf, LCLType, Classes, Graphics, Controls,
+  Forms, Dialogs, ExtCtrls, Grids, StdCtrls,INITIAL;
 
 type
   Ttableuitform = class(TForm)
@@ -24,7 +24,6 @@ type
     { Private declarations }
   public
     { Public declarations }
-    {procedure copy2clbrd(copygrid:THyperGrid);}
     procedure copy2clbrd(copygrid:TStringGrid);
     procedure dicht;
     procedure opzet(nr,nrcol,nrrow,nrhead:integer);
@@ -40,7 +39,7 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,{WINGLOB, PREVMAIN,}Clipbrd;
+uses GESCALE,Clipbrd;
 
 const col0=70;
       colmid=75;

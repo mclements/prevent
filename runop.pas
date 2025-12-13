@@ -5,11 +5,15 @@ unit RUNOP;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, Spin;
 
 type
+
+  { Trunopform }
+
   Trunopform = class(TForm)
+    agcohGroup: TRadioGroup;
     Panel1: TPanel;
     Panel2: TPanel;
     chainGroup: TRadioGroup;
@@ -24,6 +28,7 @@ type
     GenopBut: TButton;
     Spinrun: TSpinEdit;
     lengthLabel: TLabel;
+    procedure CheckBoxAgeOrCohortChange(Sender: TObject);
     procedure closebutClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -86,6 +91,11 @@ begin
   close;
 end;
 
+procedure Trunopform.CheckBoxAgeOrCohortChange(Sender: TObject);
+begin
+   // pass
+end;
+
 
 procedure Trunopform.FormCreate(Sender: TObject);
 begin
@@ -120,7 +130,7 @@ end;
 
 procedure Trunopform.chainGroupClick(Sender: TObject);
 begin
-  herzetform;
+
 end;
 
 procedure Trunopform.IntervButClick(Sender: TObject);

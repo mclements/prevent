@@ -5,7 +5,7 @@ unit OUTOP;
 interface
 
 uses
-  SysUtils, LCLIntf, LCLType, {LMessages, Messages,} Classes, Graphics, Controls,
+  SysUtils, LCLIntf, LCLType, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls,INITIAL, Spin, ComCtrls;
 
 type
@@ -65,12 +65,12 @@ implementation
 
 {$R *.lfm}
 
-uses GESCALE,WINGLOB,{PREVMAIN,}BEVOLUN{,Tabeluit,DisUnit,OutvarUnit};
+uses GESCALE,WINGLOB,BEVOLUN;
 
 
 procedure Toutopform.closebutClick(Sender: TObject);
 var
-  tmpstr:string;
+  tmpstr:string; flag:bool;
 
 begin
   if chartgroup.itemindex=2 then

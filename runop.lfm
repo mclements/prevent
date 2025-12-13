@@ -1,34 +1,37 @@
 object runopform: Trunopform
-  Left = 269
-  Top = 133
+  Left = 322
+  Height = 350
+  Top = 384
+  Width = 387
   HelpContext = 43
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Prevent run specification'
-  ClientHeight = 271
+  ClientHeight = 350
   ClientWidth = 387
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
   Font.Height = -13
   Font.Name = 'Arial'
-  Font.Style = []
-  Scaled = False
   OnActivate = FormActivate
   OnCreate = FormCreate
-  PixelsPerInch = 96
+  LCLVersion = '3.0.0.3'
+  Scaled = False
   object Panel1: TPanel
     Left = 0
-    Top = 230
-    Width = 387
     Height = 41
+    Top = 309
+    Width = 387
     Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 387
+    ParentBackground = False
     TabOrder = 0
     object closebut: TButton
       Left = 286
+      Height = 25
       Top = 6
       Width = 89
-      Height = 25
       Caption = '&Done'
       TabOrder = 0
       OnClick = closebutClick
@@ -36,125 +39,176 @@ object runopform: Trunopform
   end
   object Panel2: TPanel
     Left = 0
+    Height = 255
     Top = 0
     Width = 387
-    Height = 176
     Align = alClient
+    ClientHeight = 255
+    ClientWidth = 387
+    ParentBackground = False
     TabOrder = 1
     object chainGroup: TRadioGroup
       Left = 198
+      Height = 57
       Top = 6
       Width = 169
-      Height = 57
+      AutoFill = True
       Caption = 'Risk factors included'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 40
+      ClientWidth = 165
       ItemIndex = 0
       Items.Strings = (
         'All'
         'Selected'
       )
-      TabOrder = 0
       OnClick = chainGroupClick
+      ParentBackground = False
+      TabOrder = 0
     end
     object disGroup: TRadioGroup
       Left = 14
+      Height = 81
       Top = 6
       Width = 169
-      Height = 81
+      AutoFill = True
       Caption = 'Diseases included'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 64
+      ClientWidth = 165
       ItemIndex = 0
       Items.Strings = (
         'All'
         'Risk factor related'
         'Selected'
       )
-      TabOrder = 1
       OnClick = disGroupClick
+      ParentBackground = False
+      TabOrder = 1
     end
     object rfchoicebut: TButton
       Left = 198
+      Height = 25
       Top = 78
       Width = 169
-      Height = 25
       Caption = 'Choose risk factors'
       TabOrder = 2
       OnClick = rfchoicebutClick
     end
     object IntervBut: TButton
       Left = 198
+      Height = 25
       Top = 110
       Width = 169
-      Height = 25
       Caption = 'Risk factor interventions'
       TabOrder = 3
       OnClick = IntervButClick
     end
     object DisBut: TButton
       Left = 14
+      Height = 25
       Top = 110
       Width = 169
-      Height = 25
       Caption = 'Choose diseases'
       TabOrder = 4
       OnClick = DisButClick
     end
     object rfopBut: TButton
       Left = 198
+      Height = 25
       Top = 142
       Width = 169
-      Height = 25
       Caption = 'Risk factor options'
       TabOrder = 5
       OnClick = rfopButClick
     end
     object DisopBut: TButton
       Left = 14
+      Height = 25
       Top = 142
       Width = 169
-      Height = 25
       Caption = 'Disease options'
       TabOrder = 6
       OnClick = DisopButClick
     end
+    object agcohGroup: TRadioGroup
+      Left = 14
+      Height = 57
+      Top = 184
+      Width = 169
+      AutoFill = True
+      Caption = 'PIF calculations'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 40
+      ClientWidth = 165
+      ItemIndex = 0
+      Items.Strings = (
+        'Age'
+        'Cohort'
+      )
+      OnClick = CheckBoxAgeOrCohortChange
+      ParentBackground = False
+      TabOrder = 7
+    end
   end
   object Panel3: TPanel
     Left = 0
-    Top = 176
-    Width = 387
     Height = 54
+    Top = 255
+    Width = 387
     Align = alBottom
+    ClientHeight = 54
+    ClientWidth = 387
+    ParentBackground = False
     TabOrder = 2
     object lengthLabel: TLabel
       Left = 22
+      Height = 15
       Top = 6
       Width = 39
-      Height = 16
       Caption = 'Length'
     end
     object GenopBut: TButton
       Left = 198
+      Height = 25
       Top = 14
       Width = 169
-      Height = 25
       Caption = 'Population options'
       TabOrder = 0
       OnClick = GenopButClick
     end
     object Spinrun: TSpinEdit
       Left = 126
+      Height = 23
       Top = 13
       Width = 49
-      Height = 26
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       MaxValue = 750
-      MinValue = 0
+      OnChange = SpinrunChange
       ParentFont = False
       TabOrder = 1
       Value = 25
-      OnChange = SpinrunChange
     end
   end
 end

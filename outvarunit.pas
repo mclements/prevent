@@ -718,7 +718,7 @@ constructor Toutvar.create(vn:string;var kl:Tlistbox;tl:Tlist);
 begin
   inherited create;
   naam:=vn;
-  deci:=0;
+  deci:=2;
   tabtotbool:=true;
   kliklijst:=kl;
   kliklijst.items.add('  '+naam);
@@ -1296,18 +1296,18 @@ begin
             if ymax<tijd then ymax:=tijd;
         end;
       end;
-      with Wshared do
-        for ag:=0 to aggmax do Addx(lokaal[0,fem,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
-      with Wloss do
-         for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
-      with Wgain do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
-      with Mshared do
-        for ag:=0 to aggmax do Addx(lokaal[0,men,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
-      with Mloss do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
-      with Mgain do
-        for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
+      //with Wshared do
+      //  for ag:=0 to aggmax do Addx(lokaal[0,fem,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
+      //with Wloss do
+      //   for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
+      //with Wgain do
+      //  for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
+      //with Mshared do
+      //  for ag:=0 to aggmax do Addx(lokaal[0,men,ref,ag]/globdeeldoor,  inttostr(ag*5) , clDefault) ;
+      //with Mloss do
+      //  for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
+      //with Mgain do
+      //  for ag:=0 to aggmax do Addx(0.0,  inttostr(ag*5) , clDefault) ;
       doen(ymin,ymax,uitnaam,ls1,ls2,ls3,ls4);
     end;
   end else laatdyntabzien(population.tpopu.datavar);
