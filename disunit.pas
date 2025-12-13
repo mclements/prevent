@@ -4,7 +4,7 @@ unit DisUnit;
 
 interface
 
-uses classes,math,StdCtrls,INITIAL,trendintvunit,OutvarUnit;
+uses classes,math,StdCtrls,INITIAL,trendintvunit,OutvarUnit,runop;
 
 Type
   Tgenentity=class
@@ -17,7 +17,9 @@ Type
     procedure leesinvoer; virtual; abstract;
     procedure uitvoeropzet; virtual;
     procedure uitvoerafbraak; virtual;
-    procedure pzaanpas(tt:integer);
+    procedure pzaanpas(tt:integer); // calls one of the following two procedures
+    procedure pzaanpas_age(tt:integer);    // added 2025-12-12
+    procedure pzaanpas_cohort(tt:integer); // added 2025-12-12
     procedure ReadRRinvoer(disvar:string);
     procedure interventie(tijd:integer); virtual; abstract;
     procedure intervensafbreuk; virtual; abstract;
@@ -310,7 +312,7 @@ implementation
 
 {--------------------------------------------------------------------}
 
-uses sysutils,{PREVMAIN,}DATASET,Disoptions,datmod1,memomes,CalcUnit,dialogs;
+uses sysutils,DATASET,Disoptions,datmod1,memomes,CalcUnit,dialogs;
 
 {---------------------------------------------------------------------}
 procedure Tgenentity.dojaarstap(tt:integer);
@@ -334,13 +336,19 @@ end;
 
 
 procedure Tgenentity.pzaanpas(tt:integer);
+begin
+  if runopform.agcohGroup.ItemIndex=0 then pzaanpas_age(tt)
+  else pzaanpas_cohort(tt);
+end;
+
+procedure Tgenentity.pzaanpas_age(tt:integer);
 // versie zonder cumulative risk, age group perspective
 
 var ind,ag,ht,pt:integer;
     pidr0,pidrt:Tpidr;
     scen:Tscen;
     sex:Tsex;
-    pif,tmp:double;
+    pif:double;
     rfdis:Trfdis; // included for debugging
 
 begin
@@ -365,22 +373,22 @@ begin
           if (pt<length(dis.pzlist.datavar)) then
           for ag:=0 to disaggmax do
           begin
-          if (pidr0[scen,sex,ag]>0.0) then
-            pif:=(laglat(ht-tt)*(pidr0[scen,sex,ag]-
+            if (pidr0[scen,sex,ag]>0.0) then
+              pif:=(laglat(ht-tt)*(pidr0[scen,sex,ag]-
                     pidrt[scen,sex,ag])/pidr0[scen,sex,ag])
             else pif := 1.0;
-            if pif=1.0 then tmp := 0.0 else tmp := exp(ln(1.0-pif)*0.2);
+            // if pif=1.0 then tmp := 0.0 else tmp := exp(ln(1.0-pif)*0.2);
             if ag<disaggmax then
               dis.pzlist.datavar[pt,sex,scen,ag div 5]:=
-                dis.pzlist.datavar[pt,sex,scen,ag div 5]*tmp
+                dis.pzlist.datavar[pt,sex,scen,ag div 5]*power(1.0 - pif, 0.2)
             else  //pif eerst omzetten naar rate, dan delen door 5, en dan weer kans
               dis.pzlist.datavar[pt,sex,scen,ag div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,ag div 5]*(1.0-pif);
-          end;
-        end;
-      end;
-      end;
-    end; // with
+            end; // for ag
+        end; // if ht-self.lookback>=0
+      end; // for ht
+      end; // for sex
+    end; // with rfdis
   end; // for ind
   except
     on E:Exception do
@@ -391,8 +399,7 @@ begin
 end;
 
 
-(*
-procedure Tgenentity.pzaanpas(tt:integer);
+procedure Tgenentity.pzaanpas_cohort(tt:integer);
 // versie zonder cumulative risk, cohort perspective
 
 var ind,ag,ht,pt,agcoh,tmpll:integer;
@@ -423,8 +430,8 @@ begin
              pidr00[scen,sex,ag]:=1.0-(pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag])/pidr0[scen,sex,ag-1]
              else pidr00[scen,sex,ag]:=1.0;
         for ag:=disaggmax+1 to disaggmaxmax do pidr00[scen,sex,ag]:=1.0;
-      end;
-    end;
+      end; // for sex
+    end; // if tt=1
     for scen:=ref to intv do
     for sex:=men to fem do
     begin
@@ -454,11 +461,11 @@ begin
               dis.pzlist.datavar[pt,sex,scen,agcoh div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*(1.0-pif*laglat(tmpll));
           end;
-        end;
-      end;
-    end;
-    end; //with
-  end; //ind
+        end; // for agcoh
+      end; // for ag
+    end; // for sex
+    end; // with rfdis
+  end; // for ind
   except
     on E:Exception do
       MessageDlg('PZerror: '+e.message+', '+self.name+', agcoh '+inttostr(agcoh)+', ag '+inttostr(ag)+', PIDR00 '+floattostrf(Trfdis(rflist.items[ind]).pidr00[scen,sex,ag],fffixed,10,3)+
@@ -467,7 +474,7 @@ begin
                 ' tt '+inttostr(tt)+' pt '+inttostr(pt), mtError, [mbOK], 0);
   end;
 end;
-*)
+
 
 procedure Tgenentity.ReadRRinvoer(disvar:string);
 var ind1:integer;
