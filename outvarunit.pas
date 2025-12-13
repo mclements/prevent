@@ -718,7 +718,7 @@ constructor Toutvar.create(vn:string;var kl:Tlistbox;tl:Tlist);
 begin
   inherited create;
   naam:=vn;
-  deci:=2;
+  deci:=3;
   tabtotbool:=true;
   kliklijst:=kl;
   kliklijst.items.add('  '+naam);
