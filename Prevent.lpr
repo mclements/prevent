@@ -45,6 +45,7 @@ uses
 {$R *.res}
 
 begin
+  Application.Initialize;
   Aboutbox:=Taboutbox.Create(Application);
   aboutbox.Show;
   aboutbox.Update;

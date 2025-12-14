@@ -10,9 +10,9 @@ object datasetForm: TdatasetForm
   Font.Color = clBlack
   Font.Height = -13
   Font.Name = 'Arial'
-  OnCreate = FormCreate
-  LCLVersion = '3.0.0.3'
+  LCLVersion = '4.4.0.0'
   Scaled = False
+  OnCreate = FormCreate
   object Panel1: TPanel
     Left = 0
     Height = 41
@@ -46,49 +46,48 @@ object datasetForm: TdatasetForm
     object CurrentTab: TTabSheet
       Caption = 'Current'
       ClientHeight = 237
-      ClientWidth = 354
+      ClientWidth = 350
       OnEnter = CurrentTabEnter
       object DatasetList: TListBox
         Left = 0
         Height = 237
         Top = 0
-        Width = 354
+        Width = 350
         Align = alClient
         ItemHeight = 0
         TabOrder = 0
-        TopIndex = -1
       end
     end
     object NewTab: TTabSheet
       Caption = 'Install'
       ClientHeight = 237
-      ClientWidth = 354
+      ClientWidth = 350
       object InstallBox: TGroupBox
         Left = 0
         Height = 129
         Top = 8
         Width = 337
         Caption = 'Install'
-        ClientHeight = 125
+        ClientHeight = 108
         ClientWidth = 333
         ParentBackground = False
         TabOrder = 0
         object setnameEdit: TLabeledEdit
           Left = 6
-          Height = 23
+          Height = 24
           Top = 75
           Width = 225
-          EditLabel.Height = 15
+          EditLabel.Height = 16
           EditLabel.Width = 225
           EditLabel.Caption = 'Data set name'
           TabOrder = 0
         end
         object BestandEdit: TLabeledEdit
           Left = 6
-          Height = 23
+          Height = 24
           Top = 26
           Width = 225
-          EditLabel.Height = 15
+          EditLabel.Height = 16
           EditLabel.Width = 225
           EditLabel.Caption = 'Data set file'
           TabOrder = 1
@@ -118,16 +117,16 @@ object datasetForm: TdatasetForm
         Top = 144
         Width = 337
         Caption = 'Uninstall'
-        ClientHeight = 38
+        ClientHeight = 36
         ClientWidth = 333
         ParentBackground = False
         TabOrder = 1
         object UninstallCombo: TComboBox
           Left = 6
-          Height = 25
+          Height = 24
           Top = 10
           Width = 225
-          ItemHeight = 0
+          ItemHeight = 16
           TabOrder = 0
           Text = 'Choose dataset to uninstall'
         end
@@ -144,8 +143,8 @@ object datasetForm: TdatasetForm
     end
   end
   object FileOpenDialog: TOpenDialog
-    DefaultExt = '.mdb'
-    Filter = 'Access files|*.mdb'
+    DefaultExt = '.db'
+    Filter = 'SQLite files|*.db'
     Left = 196
     Top = 27
   end

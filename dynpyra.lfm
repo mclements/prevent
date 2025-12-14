@@ -19,7 +19,8 @@ inherited dynpyramid: Tdynpyramid
     Height = 391
     ClientHeight = 391
     inherited Jaarlab: TLabel
-      Top = 331
+      Height = 17
+      Top = 332
     end
     inherited Panel3: TPanel
       Top = 349
@@ -66,7 +67,7 @@ inherited dynpyramid: Tdynpyramid
         Legend.Visible = False
         AxisIndexX = 0
         AxisIndexY = 1
-        BarBrush.Color = clOrange
+        BarBrush.Color = clRed
         BarWidthPercent = 100
         Marks.Visible = False
         Source = Msource
