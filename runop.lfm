@@ -1,7 +1,7 @@
 object runopform: Trunopform
   Left = 322
   Height = 350
-  Top = 384
+  Top = 380
   Width = 387
   HelpContext = 43
   BorderIcons = []

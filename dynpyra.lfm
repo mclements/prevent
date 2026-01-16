@@ -1,7 +1,7 @@
 inherited dynpyramid: Tdynpyramid
   Left = 438
   Height = 432
-  Top = 330
+  Top = 327
   Width = 550
   Caption = 'dynpyramid'
   ClientHeight = 432
@@ -19,8 +19,7 @@ inherited dynpyramid: Tdynpyramid
     Height = 391
     ClientHeight = 391
     inherited Jaarlab: TLabel
-      Height = 17
-      Top = 332
+      Top = 331
     end
     inherited Panel3: TPanel
       Top = 349

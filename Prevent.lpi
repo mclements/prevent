@@ -22,7 +22,7 @@
       <BuildNr Value="1"/>
     </VersionInfo>
     <MacroValues Count="1">
-      <Macro2 Name="LCLWidgetType" Value="win32"/>
+      <Macro1 Name="LCLWidgetType" Value="qt5"/>
     </MacroValues>
     <BuildModes Count="2">
       <Item1 Name="Default" Default="True"/>
@@ -64,8 +64,8 @@
         </CompilerOptions>
       </Item2>
       <SharedMatrixOptions Count="2">
-        <Item1 ID="757674758729" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
-        <Item2 ID="593477627685" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item1 ID="757674758729" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
+        <Item2 ID="593477627685" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>
@@ -294,7 +294,7 @@
     </Linking>
     <Other>
       <CustomOptions Value="-dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL -vd"/>
-      <CompilerPath Value="Z:/usr/lib/lazarus/fpc/3.2.2/bin/i386-win32/fpc.exe"/>
+      <CompilerPath Value="/usr/bin/fpc"/>
     </Other>
   </CompilerOptions>
   <Debugging>

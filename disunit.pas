@@ -263,7 +263,7 @@ Type
     lagfunc:Tlagfunc;
     pidr00:Tpidr;
 {    corfac:double;            }
-    procedure zetpidr20(out pidr:Tpidr);
+    procedure zetpidr20(var pidr:Tpidr);
     procedure getpidr(var pidr:Tpidr;tt:integer;nuleen:integer); virtual; abstract;
     procedure readrrs(disvar,disname:string); virtual; abstract;
     function laglat(tdif:integer):double;
@@ -373,15 +373,13 @@ begin
           if (pt<length(dis.pzlist.datavar)) then
           for ag:=0 to disaggmax do
           begin
-            if (pidr0[scen,sex,ag]>0.0) then
-              pif:=(laglat(ht-tt)*(pidr0[scen,sex,ag]-
-                    pidrt[scen,sex,ag])/pidr0[scen,sex,ag])
-            else pif := 1.0;
-            // if pif=1.0 then tmp := 0.0 else tmp := exp(ln(1.0-pif)*0.2);
+            pif:=(laglat(ht-tt)*(pidr0[scen,sex,ag]-
+                    pidrt[scen,sex,ag])/pidr0[scen,sex,ag]);
             if ag<disaggmax then
               dis.pzlist.datavar[pt,sex,scen,ag div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,ag div 5]*power(1.0 - pif, 0.2)
             else  //pif eerst omzetten naar rate, dan delen door 5, en dan weer kans
+	     if ag=disaggmax then 
               dis.pzlist.datavar[pt,sex,scen,ag div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,ag div 5]*(1.0-pif);
             end; // for ag
@@ -400,13 +398,13 @@ end;
 
 
 procedure Tgenentity.pzaanpas_cohort(tt:integer);
-// versie zonder cumulative risk, cohort perspective
+{versie zonder cumulative risk, cohort perspective}
 
 var ind,ag,ht,pt,agcoh,tmpll:integer;
     pidr0,pidrt:Tpidr;
     scen:Tscen;
     sex:Tsex;
-    pif,pif2,tmpll2:double;
+    pif,pif2:double;
     rfdis:Trfdis; // included for debugging
 
 begin
@@ -426,9 +424,9 @@ begin
       for sex:=men to fem do
       begin
         for ag:=0 to disaggmax do
-           if pidr0[scen,sex,ag-1]>0.0 then
+       {    if pidr0[scen,sex,ag-1]>0.0 then}
              pidr00[scen,sex,ag]:=1.0-(pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag])/pidr0[scen,sex,ag-1]
-             else pidr00[scen,sex,ag]:=1.0;
+             {else pidr00[scen,sex,ag]:=1.0};
         for ag:=disaggmax+1 to disaggmaxmax do pidr00[scen,sex,ag]:=1.0;
       end; // for sex
     end; // if tt=1
@@ -437,13 +435,13 @@ begin
     begin
       for ag:=0 to disaggmax do
       begin
-        if (pidr00[scen,sex,ag]>0.0) and (pidr0[scen,sex,ag-1]>0.0)
+        if (pidr00[scen,sex,ag]>0.0) {and (pidr0[scen,sex,ag-1]>0.0)}
         then pif:=1.0-(1.0-(pidr0[scen,sex,ag-1]-
                 pidrt[scen,sex,ag])/pidr0[scen,sex,ag-1])/pidr00[scen,sex,ag]
         else pif:=1.0;
-//        if (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]=pidr0[scen,sex,ag-1]-pidrt[scen,sex,ag])
-//        and (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]<>pidr00[scen,sex,ag-1]-pidr00[scen,sex,ag]) then pif:=0.0;
-//        if (tt>28) and (ag=65) then pif:=0.0; doesn't work either: intervention goes to highest age as well
+{        if (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]=pidr0[scen,sex,ag-1]-pidrt[scen,sex,ag])
+        and (pidr0[scen,sex,ag-1]-pidr0[scen,sex,ag]<>pidr00[scen,sex,ag-1]-pidr00[scen,sex,ag]) then pif:=0.0;}
+{        if (tt>28) and (ag=65) then pif:=0.0; doesn't work either: intervention goes to highest age as well}
         for agcoh:=ag to disaggmax do
         begin
           pt:=tt-self.lookback+agcoh-ag;
@@ -451,12 +449,9 @@ begin
           begin  //problem: when lag>1 the same agcoh pt combination will be hit on successive tts
             if pidr0[ref,sex,ag-1]=pidr0[ref,sex,-1] then tmpll:=1000  //this is to remove the lag in age
             else tmpll:=agcoh-ag+1;
-            tmpll2 := 1.0-pif*laglat(tmpll);
-            if tmpll2 >0.0 then tmpll2 := exp(ln(tmpll2)*0.2);
             if agcoh<disaggmax then
               dis.pzlist.datavar[pt,sex,scen,agcoh div 5]:=
-                dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*tmpll2
-                // dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*exp(ln(1.0-pif*laglat(tmpll))*0.2)
+                dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*power(1.0-pif*laglat(tmpll),0.2)
             else  //pif eerst omzetten naar rate, dan delen door 5, en dan weer kans
               dis.pzlist.datavar[pt,sex,scen,agcoh div 5]:=
                 dis.pzlist.datavar[pt,sex,scen,agcoh div 5]*(1.0-pif*laglat(tmpll));
@@ -558,8 +553,6 @@ end;{RRinvoer}
 
 
 procedure Tcatrf.jaarstap(tt:integer);
-{const
-  tiny=0.000001;}
 var
      cn,ag:integer;
      sex:Tsex;
@@ -1220,7 +1213,6 @@ begin
      dd:=0;
      for num:=dist[ref,sex,ag].lage div 5 to (dist[ref,sex,ag].hage-1) div 5 do
      begin
-       if pzlist.datavar[0,sex,ref,num]>0.0 then
        tmp:=tmp+pzlist.datavar[tt,sex,ref,num]/pzlist.datavar[0,sex,ref,num];
        inc(dd);
      end;
@@ -1250,9 +1242,8 @@ begin
        dd:=0;
        for num:=(dist[intv,sex,ag].lage div 5) to ((dist[intv,sex,ag].hage-1) div 5) do
        begin
-         if (pzlist.datavar[0,sex,intv,num]>0.0) and (pzlist.datavar[0,sex,ref,num]>0.0) then
-           tmp:=tmp+1.0-((pzlist.datavar[tt-1,sex,intv,num]/pzlist.datavar[0,sex,intv,num])
-             /(pzlist.datavar[tt-1,sex,ref,num]/pzlist.datavar[0,sex,ref,num])
+         tmp:=tmp+1.0-((pzlist.datavar[tt-1,sex,intv,num]/pzlist.datavar[0,sex,intv,num])
+         /(pzlist.datavar[tt-1,sex,ref,num]/pzlist.datavar[0,sex,ref,num])
              -(pzlist.datavar[tt,sex,intv,num]/pzlist.datavar[0,sex,intv,num])
              /(pzlist.datavar[tt,sex,ref,num]/pzlist.datavar[0,sex,ref,num]));
          inc(dd);
@@ -1451,10 +1442,9 @@ begin
   for av:=0 to disaggmax do
    for scen:=ref to intv do
     for sex:=men to fem do
-        if pzlist.datavar[0,sex,scen,av div 5]>0.0 then
-           ozmort.datavar[tt,sex,scen,av div 5]:=
-           ozmort.datavar[tt,sex,scen,av div 5]+
-              morts1[scen,sex,av]*(pzlist.datavar[tt,sex,scen,av div 5]/pzlist.datavar[0,sex,scen,av div 5]);
+      ozmort.datavar[tt,sex,scen,av div 5]:=
+      ozmort.datavar[tt,sex,scen,av div 5]+
+         morts1[scen,sex,av]*(pzlist.datavar[tt,sex,scen,av div 5]/pzlist.datavar[0,sex,scen,av div 5]);
   maakuitvoer(tt);
 end;
 
@@ -1790,8 +1780,7 @@ begin
    begin
      for av:=0 to disaggmax do
      begin
-       if pzlist.datavar[0,sex,scen,av div 5]>0.0 then
-          ozInci.datavar[tt,sex,scen,av div 5]:=ozInci.datavar[tt,sex,scen,av div 5]+
+       ozInci.datavar[tt,sex,scen,av div 5]:=ozInci.datavar[tt,sex,scen,av div 5]+
                   Incis1[scen,sex,av]*(pzlist.datavar[tt,sex,scen,av div 5]/pzlist.datavar[0,sex,scen,av div 5]);
        ozprev.datavar[tt,sex,scen,av div 5]:=
          ozprev.datavar[tt,sex,scen,av div 5]+prevs1[scen,sex,av];
@@ -1956,24 +1945,19 @@ end;
 
 function Thazard3.elfunc(scen:Tscen;sex:Tsex;ag:integer;tt:integer):Double;
 begin
-   if pzlist.datavar[0,sex,scen,ag div 5]>0.0 then
-      elfunc := incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])+
-             remis1[scen,sex,ag]+cfat1[scen,sex,ag] {+2.0*ovmor[cursex,ag]}
-   else
-      elfunc := remis1[scen,sex,ag]+cfat1[scen,sex,ag] {+2.0*ovmor[cursex,ag]};
+  elfunc:=incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])+{2.0*ovmor[cursex,ag]+}
+     remis1[scen,sex,ag]+cfat1[scen,sex,ag];
 end;
 
 function Thazard3.qufunc(scen:Tscen;sex:Tsex;ag:integer;tt:integer):Double;
 var tmp:Double;
 begin
   tmp:=intpower(incis1[scen,sex,ag]*pzlist.datavar[tt,sex,scen,ag div 5],2)+
+       2.0*incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])*remis1[scen,sex,ag]-
+       2.0*incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])*cfat1[scen,sex,ag]+
        intpower(remis1[scen,sex,ag],2)+
        2.0*cfat1[scen,sex,ag]*remis1[scen,sex,ag]+
        intpower(cfat1[scen,sex,ag],2);
-  if pzlist.datavar[0,sex,scen,ag div 5]>0.0 then
-    tmp := tmp +
-       2.0*incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])*remis1[scen,sex,ag]-
-       2.0*incis1[scen,sex,ag]*(pzlist.datavar[tt,sex,scen,ag div 5]/pzlist.datavar[0,sex,scen,ag div 5])*cfat1[scen,sex,ag];
   if tmp>=0.0 then qufunc:=sqrt(tmp) else qufunc:=0.0;
 end;
 
@@ -2149,7 +2133,7 @@ begin
   dis:=di;
 end;
 
-procedure Trfdis.zetpidr20(out pidr:Tpidr);
+procedure Trfdis.zetpidr20(var pidr:Tpidr);
 var
   scen:Tscen;
   sex:Tsex;
