@@ -5,8 +5,8 @@ unit rfoptions;
 interface
 
 uses
-  LCLIntf, LCLType, {LMessages, Messages,} SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls,DisUnit, ComCtrls;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, DisUnit, ComCtrls;
 
 type
   TRFOpForm = class(TForm)
@@ -32,12 +32,13 @@ var
 implementation
 
 {$R *.lfm}
-uses GESCALE,{WINGLOB,}INITIAL;
+uses GESCALE,INITIAL;
 
 procedure TRFOpForm.FormCreate(Sender: TObject);
 begin
   geautoscale(RFOpForm);
-  caption:='Prevent - '+currentdataset;
+  { caption:='Prevent - '+currentdataset; }
+  caption:='Prevent'; // why is currentdataset='ERROR'?
 end;
 
 procedure TRFOpForm.EscButClick(Sender: TObject);

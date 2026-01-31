@@ -342,12 +342,17 @@ var
   tmpstr:string;
 begin
   inherited leesvarelscat(selectstring,cn);
-  with datamodule2.inputQ1 do
+  with datasetform do
   begin
-    first;
-    tmpstr:=fieldbyname('Param').asstring;
-    RRintervens:=tmpstr='Relativerisk';
-  end;  
+     putquery1(selectstring);
+     with datamodule2.inputQ1 do
+     begin
+	first;
+	tmpstr:=fieldbyname('Param').asstring;
+	RRintervens:=tmpstr='Relativerisk';
+     end;
+     datamodule2.SQLTransaction1.Commit;
+  end;{with datasetform}
 end;
 
 

@@ -176,9 +176,13 @@ begin
              datasetform.psq(name)+' and InterventionName='+
              datasetform.psq(PredefintForm.predefchecklist.items[PredefintForm.predefchecklist.itemindex])+'and catno=0 order by time, lage');
           for num:=1 to catno-1 do
-            intervens.leesvarelscat('SELECT * FROM CatrfInterventions where RiskfactorName='+
-             datasetform.psq(name)+' and InterventionName='+
-             datasetform.psq(PredefintForm.predefchecklist.items[PredefintForm.predefchecklist.itemindex])+'and catno='+inttostr(num)+' order by time, lage',num);
+            begin
+              tmpstr := 'SELECT * FROM CatrfInterventions where RiskfactorName='+
+                datasetform.psq(name)+' and InterventionName='+
+                datasetform.psq(PredefintForm.predefchecklist.items[PredefintForm.predefchecklist.itemindex])+
+	        'and catno='+inttostr(num)+' order by time, lage';
+              intervens.leesvarelscat(tmpstr,num);
+            end;
           Rrintervention:=intervens.RRintervens;
         end;
       end;

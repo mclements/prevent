@@ -1,7 +1,7 @@
 object datasetForm: TdatasetForm
-  Left = 270
+  Left = 2423
   Height = 307
-  Top = 166
+  Top = 435
   Width = 358
   Caption = 'Prevent data sets'
   ClientHeight = 307
